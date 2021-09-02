@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="WeatherTask_GizaSys" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EoZ-1q-Wvo">
+                                <rect key="frame" x="16" y="60" width="382" height="56"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Activties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHL-Zs-bp9">
+                                <rect key="frame" x="16" y="148" width="382" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zcA-2h-Rrm">
+                                <rect key="frame" x="16" y="218.5" width="382" height="627.5"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="lfg-Dd-xJd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nMD-KM-IGq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zcA-2h-Rrm" firstAttribute="top" secondItem="FHL-Zs-bp9" secondAttribute="bottom" constant="32" id="5fF-Q4-GG1"/>
+                            <constraint firstItem="zcA-2h-Rrm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DBz-IL-twW"/>
+                            <constraint firstAttribute="trailing" secondItem="EoZ-1q-Wvo" secondAttribute="trailing" constant="16" id="K0g-7p-zzu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zcA-2h-Rrm" secondAttribute="trailing" constant="16" id="Pph-pP-5F0"/>
+                            <constraint firstItem="EoZ-1q-Wvo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Z7z-ip-39P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FHL-Zs-bp9" secondAttribute="trailing" constant="16" id="aHA-cr-4Iu"/>
+                            <constraint firstItem="EoZ-1q-Wvo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="bWr-Td-pjn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zcA-2h-Rrm" secondAttribute="bottom" constant="16" id="f7W-FI-hO9"/>
+                            <constraint firstItem="FHL-Zs-bp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nFa-5j-Utv"/>
+                            <constraint firstItem="FHL-Zs-bp9" firstAttribute="top" secondItem="EoZ-1q-Wvo" secondAttribute="bottom" constant="32" id="zgS-RD-lPh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="homeTableView" destination="zcA-2h-Rrm" id="7em-cm-vP4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="95"/>
+        </scene>
+    </scenes>
+</document>
