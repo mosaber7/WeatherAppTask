@@ -13,12 +13,15 @@ protocol HomeViewProtocol: AnyObject {
     
 }
 protocol  HomePresenterProtocol: AnyObject {
+    
+    func presenterDidLoad()
     var view: HomeViewProtocol?{get set}
     var numberOfRows: Int{get}
     var city: City?{set get}
 }
 protocol HomeInteractorInputProtocol {
     var presenter: HomeInteractorOutputProtocol?{get set}
+    func getCity()
 }
 protocol HomeInteractorOutputProtocol: AnyObject {
     func dataFetchedSuccessfully(city: City)

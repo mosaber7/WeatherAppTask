@@ -8,6 +8,10 @@
 import Foundation
 
 class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
+    func presenterDidLoad() {
+        interactor.getCity()
+    }
+    
     
     var city: City?
     
@@ -32,5 +36,5 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     func dateFetchingFailed(with error: Error) {
         print(error)
     }
-
+    
 }

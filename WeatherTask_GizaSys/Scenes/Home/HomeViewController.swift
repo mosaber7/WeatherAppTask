@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     @IBOutlet weak var homeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.presenterDidLoad()
         registerCell()
         
         
@@ -48,8 +49,7 @@ extension HomeViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = homeTableView.dequeueReusableCell(withIdentifier: "CityCell") as? CityCell
-        
-        cell?.configCell(cityName: "Cairo", temp: self.presenter!.city!.main.temp, windSpeed: self.presenter!.city!.wind.speed, weather: self.presenter!.city!.weather[0].weatherDescription)
+        cell?.configCell(cityName: "Cairo", temp: self.presenter?.city?.main.temp ?? 0, windSpeed: self.presenter?.city?.wind.speed ?? 0, weather: self.presenter?.city?.weather[0].weatherDescription ?? "")
         return cell ?? UITableViewCell()
     }
 }
