@@ -7,6 +7,12 @@
 
 import UIKit
 
+//MARK: - CityCellViewProtocol
+protocol  CityCellViewProtocol {
+    func configure(cityViewModel: CityViewModel)
+}
+
+//MARK: - CityCell
 class CityCell: UITableViewCell {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
@@ -24,11 +30,16 @@ class CityCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(cityName: String, temp: Double, windSpeed: Double, weather: String){
-        cityNameLabel.text = cityName
-        tempLabel.text = "\(tempLabel)"
-        windSpeedLabel.text = "\(windSpeed)"
-        weatherConditionLabel.text = weather
+    
+}
+
+extension CityCell: CityCellViewProtocol{
+    func configure(cityViewModel: CityViewModel) {
+        cityNameLabel.text = cityViewModel.name
+        tempLabel.text = "\(cityViewModel.temp)"
+        windSpeedLabel.text = "\(cityViewModel.windSpeed)"
+        weatherConditionLabel.text = cityViewModel.weatherDescription
     }
+    
     
 }

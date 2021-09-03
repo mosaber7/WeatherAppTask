@@ -7,6 +7,13 @@
 
 import Foundation
 
+//MARK: - HomeInteractorProtocol
+protocol HomeInteractorInputProtocol {
+    var presenter: HomeInteractorOutputProtocol?{get set}
+    func getCity()
+}
+
+//MARK: - Interactor
 
 class HomeInteractor: HomeInteractorInputProtocol{
    weak var presenter: HomeInteractorOutputProtocol?

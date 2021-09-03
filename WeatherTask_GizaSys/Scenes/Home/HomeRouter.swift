@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol HomeRouterProtocol {
+    
+}
+
 
 class HomeRouter: HomeRouterProtocol{
    

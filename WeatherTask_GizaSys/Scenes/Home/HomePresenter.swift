@@ -7,17 +7,41 @@
 
 import Foundation
 
+
+//MARK: - Presenter Protocol
+protocol  HomePresenterProtocol: AnyObject {
+    
+    func presenterDidLoad()
+    func ConfigureCell(cell: CityCellViewProtocol)
+    var view: HomeViewProtocol?{get set}
+    var numberOfRows: Int{ get}
+    var city: City?{set get}
+}
+//MARK: - Interactor-Presenter Protocol
+protocol HomeInteractorOutputProtocol: AnyObject {
+    func dataFetchedSuccessfully(city: City)
+    func dateFetchingFailed(with error: Error)
+}
+
+//MARK: - Home Presenter class
 class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
+    func ConfigureCell(cell: CityCellViewProtocol) {
+        guard let city = city else {
+            return
+        }
+        let model = CityViewModel(city: city)
+        cell.configure(cityViewModel: model)
+    }
+    
     func presenterDidLoad() {
         interactor.getCity()
     }
-    
-    
-    var city: City?
-    
     var numberOfRows: Int{
         return 5
     }
+    
+    var city: City?
+    
     
    
     weak var view: HomeViewProtocol?

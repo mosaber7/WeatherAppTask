@@ -3,17 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0599A05F26DFF8480006E48B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A05E26DFF8480006E48B /* AppDelegate.swift */; };
 		0599A06126DFF8480006E48B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06026DFF8480006E48B /* SceneDelegate.swift */; };
-		0599A06326DFF8480006E48B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06226DFF8480006E48B /* ViewController.swift */; };
+		0599A06326DFF8480006E48B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06226DFF8480006E48B /* HomeViewController.swift */; };
 		0599A06626DFF8480006E48B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0599A06426DFF8480006E48B /* Main.storyboard */; };
 		0599A06926DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06726DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld */; };
 		0599A06B26DFF8490006E48B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0599A06A26DFF8490006E48B /* Assets.xcassets */; };
 		0599A06E26DFF8490006E48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0599A06C26DFF8490006E48B /* LaunchScreen.storyboard */; };
+		05B525F026E0FC53001385C4 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B525EF26E0FC53001385C4 /* HomeInteractor.swift */; };
+		05B525F626E0FDA1001385C4 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B525F526E0FDA1001385C4 /* HomePresenter.swift */; };
+		05B525FA26E1018C001385C4 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B525F926E1018C001385C4 /* HomeRouter.swift */; };
+		05B968D826E0CFDF00D776E0 /* CityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B968D726E0CFDF00D776E0 /* CityRequest.swift */; };
+		05B968DC26E0D02F00D776E0 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B968DB26E0D02F00D776E0 /* City.swift */; };
+		05B968DF26E0D45A00D776E0 /* CityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B968DE26E0D45A00D776E0 /* CityRouter.swift */; };
+		05B968EB26E0E7B400D776E0 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B968E926E0E7B400D776E0 /* CityCell.swift */; };
+		05B968EC26E0E7B400D776E0 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B968EA26E0E7B400D776E0 /* CityCell.xib */; };
+		05ED750426E26B4900281A7A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED750326E26B4900281A7A /* DetailsViewController.swift */; };
+		05ED750E26E2745E00281A7A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED750D26E2745E00281A7A /* DetailPresenter.swift */; };
+		05ED751226E2756200281A7A /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED751126E2756200281A7A /* DetailsInteractor.swift */; };
+		05ED751526E2759700281A7A /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED751426E2759700281A7A /* DetailsRouter.swift */; };
+		05ED751E26E27DA300281A7A /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED751C26E27DA300281A7A /* DetailsTableViewCell.swift */; };
+		05ED751F26E27DA300281A7A /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05ED751D26E27DA300281A7A /* DetailsTableViewCell.xib */; };
 		5E05FBCE0FFCD36859818820 /* Pods_WeatherTask_GizaSys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0929CF7406E3F919F12ADA5 /* Pods_WeatherTask_GizaSys.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +35,26 @@
 		0599A05B26DFF8480006E48B /* WeatherTask_GizaSys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTask_GizaSys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0599A05E26DFF8480006E48B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0599A06026DFF8480006E48B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0599A06226DFF8480006E48B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0599A06226DFF8480006E48B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0599A06526DFF8480006E48B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0599A06826DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherTask_GizaSys.xcdatamodel; sourceTree = "<group>"; };
 		0599A06A26DFF8490006E48B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0599A06D26DFF8490006E48B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0599A06F26DFF8490006E48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05B525EF26E0FC53001385C4 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		05B525F526E0FDA1001385C4 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		05B525F926E1018C001385C4 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		05B968D726E0CFDF00D776E0 /* CityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRequest.swift; sourceTree = "<group>"; };
+		05B968DB26E0D02F00D776E0 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		05B968DE26E0D45A00D776E0 /* CityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRouter.swift; sourceTree = "<group>"; };
+		05B968E926E0E7B400D776E0 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		05B968EA26E0E7B400D776E0 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		05ED750326E26B4900281A7A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		05ED750D26E2745E00281A7A /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		05ED751126E2756200281A7A /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		05ED751426E2759700281A7A /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		05ED751C26E27DA300281A7A /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		05ED751D26E27DA300281A7A /* DetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsTableViewCell.xib; sourceTree = "<group>"; };
 		35FB4BEE46BB57DBD41CA971 /* Pods-WeatherTask_GizaSys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTask_GizaSys.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTask_GizaSys/Pods-WeatherTask_GizaSys.debug.xcconfig"; sourceTree = "<group>"; };
 		6A4690898B65BA8BAAAC63F4 /* Pods-WeatherTask_GizaSys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTask_GizaSys.release.xcconfig"; path = "Target Support Files/Pods-WeatherTask_GizaSys/Pods-WeatherTask_GizaSys.release.xcconfig"; sourceTree = "<group>"; };
 		E0929CF7406E3F919F12ADA5 /* Pods_WeatherTask_GizaSys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherTask_GizaSys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,10 +93,10 @@
 		0599A05D26DFF8480006E48B /* WeatherTask_GizaSys */ = {
 			isa = PBXGroup;
 			children = (
+				05B968E226E0E54600D776E0 /* Scenes */,
+				0599A07A26DFFA990006E48B /* Gateaway */,
 				0599A05E26DFF8480006E48B /* AppDelegate.swift */,
 				0599A06026DFF8480006E48B /* SceneDelegate.swift */,
-				0599A06226DFF8480006E48B /* ViewController.swift */,
-				0599A06426DFF8480006E48B /* Main.storyboard */,
 				0599A06A26DFF8490006E48B /* Assets.xcassets */,
 				0599A06C26DFF8490006E48B /* LaunchScreen.storyboard */,
 				0599A06F26DFF8490006E48B /* Info.plist */,
@@ -77,13 +105,82 @@
 			path = WeatherTask_GizaSys;
 			sourceTree = "<group>";
 		};
+		0599A07A26DFFA990006E48B /* Gateaway */ = {
+			isa = PBXGroup;
+			children = (
+				05B968DA26E0D01700D776E0 /* Models */,
+				05B968D726E0CFDF00D776E0 /* CityRequest.swift */,
+				05B968DE26E0D45A00D776E0 /* CityRouter.swift */,
+			);
+			path = Gateaway;
+			sourceTree = "<group>";
+		};
+		05B968DA26E0D01700D776E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05B968DB26E0D02F00D776E0 /* City.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05B968E226E0E54600D776E0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0599A06426DFF8480006E48B /* Main.storyboard */,
+				05B968E326E0E54E00D776E0 /* Home */,
+				05B968E426E0E55700D776E0 /* Details */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		05B968E326E0E54E00D776E0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				05B968E726E0E76100D776E0 /* HomeTableViewCell */,
+				0599A06226DFF8480006E48B /* HomeViewController.swift */,
+				05B525F926E1018C001385C4 /* HomeRouter.swift */,
+				05B525EF26E0FC53001385C4 /* HomeInteractor.swift */,
+				05B525F526E0FDA1001385C4 /* HomePresenter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		05B968E426E0E55700D776E0 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				05ED750726E26FF100281A7A /* DetailsTableViewCell */,
+				05ED750326E26B4900281A7A /* DetailsViewController.swift */,
+				05ED750D26E2745E00281A7A /* DetailPresenter.swift */,
+				05ED751126E2756200281A7A /* DetailsInteractor.swift */,
+				05ED751426E2759700281A7A /* DetailsRouter.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		05B968E726E0E76100D776E0 /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				05B968E926E0E7B400D776E0 /* CityCell.swift */,
+				05B968EA26E0E7B400D776E0 /* CityCell.xib */,
+			);
+			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		05ED750726E26FF100281A7A /* DetailsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				05ED751C26E27DA300281A7A /* DetailsTableViewCell.swift */,
+				05ED751D26E27DA300281A7A /* DetailsTableViewCell.xib */,
+			);
+			path = DetailsTableViewCell;
+			sourceTree = "<group>";
+		};
 		CE8B2C3144E3D1179157CE8A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				35FB4BEE46BB57DBD41CA971 /* Pods-WeatherTask_GizaSys.debug.xcconfig */,
 				6A4690898B65BA8BAAAC63F4 /* Pods-WeatherTask_GizaSys.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,8 +251,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05ED751F26E27DA300281A7A /* DetailsTableViewCell.xib in Resources */,
 				0599A06E26DFF8490006E48B /* LaunchScreen.storyboard in Resources */,
 				0599A06B26DFF8490006E48B /* Assets.xcassets in Resources */,
+				05B968EC26E0E7B400D776E0 /* CityCell.xib in Resources */,
 				0599A06626DFF8480006E48B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,9 +309,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0599A06926DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld in Sources */,
-				0599A06326DFF8480006E48B /* ViewController.swift in Sources */,
+				05B525FA26E1018C001385C4 /* HomeRouter.swift in Sources */,
+				0599A06326DFF8480006E48B /* HomeViewController.swift in Sources */,
+				05B968DC26E0D02F00D776E0 /* City.swift in Sources */,
+				05B968D826E0CFDF00D776E0 /* CityRequest.swift in Sources */,
+				05ED751526E2759700281A7A /* DetailsRouter.swift in Sources */,
 				0599A05F26DFF8480006E48B /* AppDelegate.swift in Sources */,
 				0599A06126DFF8480006E48B /* SceneDelegate.swift in Sources */,
+				05ED750E26E2745E00281A7A /* DetailPresenter.swift in Sources */,
+				05B525F026E0FC53001385C4 /* HomeInteractor.swift in Sources */,
+				05ED751226E2756200281A7A /* DetailsInteractor.swift in Sources */,
+				05B968EB26E0E7B400D776E0 /* CityCell.swift in Sources */,
+				05B968DF26E0D45A00D776E0 /* CityRouter.swift in Sources */,
+				05ED750426E26B4900281A7A /* DetailsViewController.swift in Sources */,
+				05ED751E26E27DA300281A7A /* DetailsTableViewCell.swift in Sources */,
+				05B525F626E0FDA1001385C4 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
