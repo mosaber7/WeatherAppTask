@@ -9,10 +9,12 @@ import Foundation
 import UIKit
 
 
-protocol DetailsViewProtocol {
+protocol DetailsViewProtocol: AnyObject {
     
 }
 
 class DetailsViewController: UIViewController {
+    
+    
     
 }

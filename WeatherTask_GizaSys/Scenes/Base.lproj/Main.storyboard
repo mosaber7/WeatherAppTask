@@ -63,7 +63,7 @@
         <!--Details View Controller-->
         <scene sceneID="FKV-0E-yBu">
             <objects>
-                <viewController id="gZY-IX-8yZ" customClass="DetailsViewController" customModule="WeatherTask_GizaSys" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="gZY-IX-8yZ" customClass="DetailsViewController" customModule="WeatherTask_GizaSys" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ww-7N-Duw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

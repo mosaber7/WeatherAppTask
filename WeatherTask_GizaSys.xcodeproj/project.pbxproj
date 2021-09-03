@@ -14,6 +14,9 @@
 		0599A06926DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06726DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld */; };
 		0599A06B26DFF8490006E48B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0599A06A26DFF8490006E48B /* Assets.xcassets */; };
 		0599A06E26DFF8490006E48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0599A06C26DFF8490006E48B /* LaunchScreen.storyboard */; };
+		05AEAC4626E2B5BF00CB282A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AEAC4526E2B5BF00CB282A /* Route.swift */; };
+		05AEAC4926E2B68B00CB282A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AEAC4826E2B68B00CB282A /* UIViewController+Extension.swift */; };
+		05AEAC4C26E2B81A00CB282A /* HomeNavigationRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AEAC4B26E2B81A00CB282A /* HomeNavigationRoutes.swift */; };
 		05B525F026E0FC53001385C4 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B525EF26E0FC53001385C4 /* HomeInteractor.swift */; };
 		05B525F626E0FDA1001385C4 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B525F526E0FDA1001385C4 /* HomePresenter.swift */; };
 		05B525FA26E1018C001385C4 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B525F926E1018C001385C4 /* HomeRouter.swift */; };
@@ -41,6 +44,9 @@
 		0599A06A26DFF8490006E48B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0599A06D26DFF8490006E48B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0599A06F26DFF8490006E48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05AEAC4526E2B5BF00CB282A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		05AEAC4826E2B68B00CB282A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		05AEAC4B26E2B81A00CB282A /* HomeNavigationRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationRoutes.swift; sourceTree = "<group>"; };
 		05B525EF26E0FC53001385C4 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		05B525F526E0FDA1001385C4 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		05B525F926E1018C001385C4 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 		0599A05D26DFF8480006E48B /* WeatherTask_GizaSys */ = {
 			isa = PBXGroup;
 			children = (
+				05AEAC4326E2B4E900CB282A /* Components */,
 				05B968E226E0E54600D776E0 /* Scenes */,
 				0599A07A26DFFA990006E48B /* Gateaway */,
 				0599A05E26DFF8480006E48B /* AppDelegate.swift */,
@@ -113,6 +120,23 @@
 				05B968DE26E0D45A00D776E0 /* CityRouter.swift */,
 			);
 			path = Gateaway;
+			sourceTree = "<group>";
+		};
+		05AEAC4326E2B4E900CB282A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				05AEAC4426E2B4F800CB282A /* NavigationRoute */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		05AEAC4426E2B4F800CB282A /* NavigationRoute */ = {
+			isa = PBXGroup;
+			children = (
+				05AEAC4526E2B5BF00CB282A /* Route.swift */,
+				05AEAC4826E2B68B00CB282A /* UIViewController+Extension.swift */,
+			);
+			path = NavigationRoute;
 			sourceTree = "<group>";
 		};
 		05B968DA26E0D01700D776E0 /* Models */ = {
@@ -141,6 +165,7 @@
 				05B525F926E1018C001385C4 /* HomeRouter.swift */,
 				05B525EF26E0FC53001385C4 /* HomeInteractor.swift */,
 				05B525F526E0FDA1001385C4 /* HomePresenter.swift */,
+				05AEAC4B26E2B81A00CB282A /* HomeNavigationRoutes.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -308,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05AEAC4926E2B68B00CB282A /* UIViewController+Extension.swift in Sources */,
 				0599A06926DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld in Sources */,
 				05B525FA26E1018C001385C4 /* HomeRouter.swift in Sources */,
 				0599A06326DFF8480006E48B /* HomeViewController.swift in Sources */,
@@ -316,7 +342,9 @@
 				05ED751526E2759700281A7A /* DetailsRouter.swift in Sources */,
 				0599A05F26DFF8480006E48B /* AppDelegate.swift in Sources */,
 				0599A06126DFF8480006E48B /* SceneDelegate.swift in Sources */,
+				05AEAC4C26E2B81A00CB282A /* HomeNavigationRoutes.swift in Sources */,
 				05ED750E26E2745E00281A7A /* DetailPresenter.swift in Sources */,
+				05AEAC4626E2B5BF00CB282A /* Route.swift in Sources */,
 				05B525F026E0FC53001385C4 /* HomeInteractor.swift in Sources */,
 				05ED751226E2756200281A7A /* DetailsInteractor.swift in Sources */,
 				05B968EB26E0E7B400D776E0 /* CityCell.swift in Sources */,

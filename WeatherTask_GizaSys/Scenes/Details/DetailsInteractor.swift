@@ -7,8 +7,14 @@
 
 import Foundation
 
+
+
 protocol DetailsInteractorProtocol {
+    var presenter: DetailPresenterProtocol?{get set}
     
 }
 
-class DetailInteractor: DetailsInteractorProtocol{}
+class DetailsInteractor: DetailsInteractorProtocol {
+    var presenter: DetailPresenterProtocol?
+    
+}

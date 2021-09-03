@@ -8,7 +8,11 @@
 import Foundation
 
 protocol DetailPresenterProtocol {
-    
+    var view: DetailsViewProtocol? {set get}
 }
 
-class DetailsPresenter: DetailPresenterProtocol{}
+class DetailsPresenter: DetailPresenterProtocol{
+    weak var view: DetailsViewProtocol?
+    
+    
+}

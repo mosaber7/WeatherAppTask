@@ -17,7 +17,7 @@ protocol HomeInteractorInputProtocol {
 
 class HomeInteractor: HomeInteractorInputProtocol{
    weak var presenter: HomeInteractorOutputProtocol?
-    let request = cityRequest()
+    private let request = cityRequest()
     
     func getCity(){
     request.retrieveCityWeather(city: "Cairo") { [weak self] (result) in
