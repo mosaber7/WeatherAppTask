@@ -13,6 +13,8 @@
 		0574D85826E3BE53009CE02A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85726E3BE53009CE02A /* SearchPresenter.swift */; };
 		0574D85E26E3DF6F009CE02A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85C26E3DF6F009CE02A /* SearchTableViewCell.swift */; };
 		0574D85F26E3DF6F009CE02A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0574D85D26E3DF6F009CE02A /* SearchTableViewCell.xib */; };
+		0574D86626E3F6C6009CE02A /* SearchNavigationRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D86526E3F6C6009CE02A /* SearchNavigationRoutes.swift */; };
+		0574D86926E3FA4F009CE02A /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D86826E3FA4F009CE02A /* SearchRouter.swift */; };
 		0599A05F26DFF8480006E48B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A05E26DFF8480006E48B /* AppDelegate.swift */; };
 		0599A06126DFF8480006E48B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06026DFF8480006E48B /* SceneDelegate.swift */; };
 		0599A06326DFF8480006E48B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06226DFF8480006E48B /* HomeViewController.swift */; };
@@ -45,6 +47,8 @@
 		0574D85726E3BE53009CE02A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		0574D85C26E3DF6F009CE02A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		0574D85D26E3DF6F009CE02A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		0574D86526E3F6C6009CE02A /* SearchNavigationRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationRoutes.swift; sourceTree = "<group>"; };
+		0574D86826E3FA4F009CE02A /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		0599A05B26DFF8480006E48B /* WeatherTask_GizaSys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTask_GizaSys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0599A05E26DFF8480006E48B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0599A06026DFF8480006E48B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				0574D86126E3DF77009CE02A /* SearchBarTableViewCells */,
 				0574D85326E3AFFB009CE02A /* SearchViewController.swift */,
 				0574D85726E3BE53009CE02A /* SearchPresenter.swift */,
+				0574D86526E3F6C6009CE02A /* SearchNavigationRoutes.swift */,
+				0574D86826E3FA4F009CE02A /* SearchRouter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05AEAC4926E2B68B00CB282A /* UIViewController+Extension.swift in Sources */,
+				0574D86626E3F6C6009CE02A /* SearchNavigationRoutes.swift in Sources */,
 				0599A06926DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld in Sources */,
 				05B525FA26E1018C001385C4 /* HomeRouter.swift in Sources */,
 				0599A06326DFF8480006E48B /* HomeViewController.swift in Sources */,
@@ -373,6 +380,7 @@
 				0599A06126DFF8480006E48B /* SceneDelegate.swift in Sources */,
 				05AEAC4C26E2B81A00CB282A /* HomeNavigationRoutes.swift in Sources */,
 				0574D85426E3AFFB009CE02A /* SearchViewController.swift in Sources */,
+				0574D86926E3FA4F009CE02A /* SearchRouter.swift in Sources */,
 				05ED750E26E2745E00281A7A /* DetailPresenter.swift in Sources */,
 				05AEAC4626E2B5BF00CB282A /* Route.swift in Sources */,
 				05B525F026E0FC53001385C4 /* HomeInteractor.swift in Sources */,

@@ -20,7 +20,6 @@ protocol HomeViewProtocol: AnyObject, NavigationRoute {
 class HomeViewController: UIViewController, HomeViewProtocol {
    
     var presenter: HomePresenterProtocol?
-    var temp = 5
    
 
     @IBOutlet weak var homeSearchBar: UISearchBar!
@@ -56,7 +55,6 @@ extension HomeViewController: UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            temp -= 1
             homeTableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -67,7 +65,7 @@ extension HomeViewController: UITableViewDelegate{
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        temp
+        self.presenter?.numberOfRows ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -18,6 +18,7 @@ protocol  HomePresenterProtocol: AnyObject {
     var view: HomeViewProtocol?{get set}
     var numberOfRows: Int{ get}
     var cities: [City]{set get}
+    var favoriteCities: [City]{set get}
 }
 //MARK: - Interactor-Presenter Protocol
 protocol HomeInteractorOutputProtocol: AnyObject {
@@ -29,10 +30,11 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     
     var numberOfRows: Int{
-        return 5
+        return favoriteCities.count
     }
     
     var cities = [City]()
+    var favoriteCities =  [City]()
     weak var view: HomeViewProtocol?
     private let interactor : HomeInteractorInputProtocol
     private let router: HomeRouterProtocol
@@ -57,7 +59,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
     
     func dateFetchingFailed(with error: Error) {
-        print(error)
+        fatalError("Failed to fetch Data")
     }
     
     func selectCty(at index: IndexPath) {

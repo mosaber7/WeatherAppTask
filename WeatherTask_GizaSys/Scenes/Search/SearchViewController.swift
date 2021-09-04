@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - Search View Protocol
-protocol SearchViewProtocol: AnyObject {
+protocol SearchViewProtocol: AnyObject, NavigationRoute {
     var searchPresenter: SearchPresenterProtocol?{set get}
     func showTablView()
     func reloadData()
@@ -51,7 +51,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
         self.searchPresenter?.configureCell(cell: cell, indexPath: indexPath )
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.searchPresenter?.selectCity(at: indexPath)
+    }
     
 }
 
@@ -62,10 +64,7 @@ extension SearchViewController: UISearchBarDelegate{
         citiesSearchBar.resignFirstResponder()
     }
     
-    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
-
-    }
+   
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchPresenter?.textDidChange(searchText: searchText)

@@ -46,9 +46,6 @@
                             <constraint firstItem="Rvp-5i-O9h" firstAttribute="leading" secondItem="2f6-vF-akr" secondAttribute="leading" constant="16" id="bxP-jM-QXg"/>
                             <constraint firstItem="a5g-DB-O8G" firstAttribute="bottom" secondItem="MKW-A4-WFU" secondAttribute="bottom" constant="16" id="koZ-BO-pID"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="QV1-Bq-3XC" appends="YES" id="cJ6-LV-O6h"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="citiesSearchBar" destination="Rvp-5i-O9h" id="7GJ-8O-gE6"/>
@@ -56,11 +53,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1I6-Y5-ajV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="QV1-Bq-3XC">
-                    <connections>
-                        <action selector="backgroundTapped:" destination="7UM-M5-o4e" id="jyR-EF-1me"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1379.7101449275362" y="-579.24107142857144"/>
         </scene>

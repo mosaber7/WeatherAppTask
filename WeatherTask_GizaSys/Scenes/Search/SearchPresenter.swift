@@ -12,6 +12,7 @@ protocol SearchPresenterProtocol {
     var rowsCount: Int{get}
     func textDidChange(searchText: String)
     func configureCell(cell: SearchCellViewProtocol, indexPath: IndexPath)
+    func selectCity(at index: IndexPath)
 }
 
 
@@ -51,6 +52,11 @@ class SearchPresenter: SearchPresenterProtocol {
     
     func configureCell(cell: SearchCellViewProtocol, indexPath: IndexPath) {
         cell.configureCell(cityName: filteredCities[indexPath.row].name)
+    }
+    func selectCity(at index: IndexPath) {
+        let selectedCityName = cities[index.row].name
+        let detailsRoute = SearchNavigationRoutes.Details(selectedCityName)
+        searchView?.navigate(to: detailsRoute)
     }
     
 }
