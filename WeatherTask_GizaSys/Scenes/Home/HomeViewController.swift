@@ -23,9 +23,12 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     var temp = 5
    
 
+    @IBOutlet weak var homeSearchBar: UISearchBar!
     @IBOutlet weak var homeTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeSearchBar.delegate = self
         presenter?.presenterDidLoad()
         registerCell()
             }
@@ -49,6 +52,7 @@ extension HomeViewController{
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("clicked")
         self.presenter?.selectCty(at: indexPath)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -76,7 +80,15 @@ extension HomeViewController: UITableViewDataSource{
     
 }
 
-//MARK: - Location Managing
+//MARK: - Search Bar Setup
+extension HomeViewController: UISearchBarDelegate{
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        presenter?.searchBarClicked()
+    }
+ 
+}
 
 
 

@@ -23,4 +23,8 @@ func retrieveCityWeather(city: String, _ compeletionHandler: @escaping(Result<Ci
     
 }
     
+    func retrieveCityFullWeather(){
+        
+    }
+    
 }

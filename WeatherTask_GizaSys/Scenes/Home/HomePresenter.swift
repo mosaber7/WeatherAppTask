@@ -14,6 +14,7 @@ protocol  HomePresenterProtocol: AnyObject {
     func presenterDidLoad()
     func ConfigureCell(cell: CityCellViewProtocol, at index: IndexPath)
     func selectCty(at index: IndexPath)
+    func searchBarClicked()
     var view: HomeViewProtocol?{get set}
     var numberOfRows: Int{ get}
     var cities: [City]{set get}
@@ -43,12 +44,14 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
     
     func presenterDidLoad() {
-        interactor.getCity()
+        OperationQueue.main.addOperation {
+            self.interactor.getCity()
+        }
+        
     }
     func dataFetchedSuccessfully(city: City) {
         for _ in 0..<5{
             self.cities.append(city)
-            
         }
         view?.presentData()
     }
@@ -58,15 +61,23 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
     
     func selectCty(at index: IndexPath) {
+        guard cities.count > 0 else{return}
         let selectedCity = cities[index.row]
         let cityDetailsRoute = HomeNavigationRoutes.Details(selectedCity)
         view?.navigate(to: cityDetailsRoute)
     }
     
     func ConfigureCell(cell: CityCellViewProtocol, at index: IndexPath) {
+        guard cities.count > 0 else {
+            return
+        }
         let city = cities[index.row]
         let model = CityViewModel(city: city)
         cell.configure(cityViewModel: model)
+    }
+    func searchBarClicked() {
+        let searchVCRoute = HomeNavigationRoutes.Search
+        view?.navigate(to: searchVCRoute)
     }
     
     

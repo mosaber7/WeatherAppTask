@@ -19,6 +19,7 @@ extension UIViewController: NavigationRoute{
         case .push:
             self.navigationController?.pushViewController(route.destination, animated: true)
         case .modal:
+            
             self.present(route.destination, animated: true, completion: nil)
         }
     }

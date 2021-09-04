@@ -1,13 +1,13 @@
 //
-//  DetailsTableViewCell.swift
+//  DayTableViewCell.swift
 //  WeatherTask_GizaSys
 //
-//  Created by Saber on 03/09/2021.
+//  Created by Saber on 04/09/2021.
 //
 
 import UIKit
 
-class DetailsTableViewCell: UITableViewCell {
+class DayCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

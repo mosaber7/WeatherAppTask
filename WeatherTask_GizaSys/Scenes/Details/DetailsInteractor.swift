@@ -16,5 +16,12 @@ protocol DetailsInteractorProtocol {
 
 class DetailsInteractor: DetailsInteractorProtocol {
     var presenter: DetailPresenterProtocol?
+    private let request = cityRequest()
     
+    
+    func getCityFullWeather(){
+        
+    }
+
+
 }
