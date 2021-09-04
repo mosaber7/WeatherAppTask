@@ -77,7 +77,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
     func searchBarClicked() {
         let searchVCRoute = HomeNavigationRoutes.Search
-        view?.navigate(to: searchVCRoute)
+        view?.navigate(to: searchVCRoute(cities))
     }
     
     

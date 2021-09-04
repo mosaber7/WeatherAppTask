@@ -11,6 +11,8 @@
 		0574D84E26E38F8D009CE02A /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0574D84C26E38F8D009CE02A /* DayCell.xib */; };
 		0574D85426E3AFFB009CE02A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85326E3AFFB009CE02A /* SearchViewController.swift */; };
 		0574D85826E3BE53009CE02A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85726E3BE53009CE02A /* SearchPresenter.swift */; };
+		0574D85E26E3DF6F009CE02A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85C26E3DF6F009CE02A /* SearchTableViewCell.swift */; };
+		0574D85F26E3DF6F009CE02A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0574D85D26E3DF6F009CE02A /* SearchTableViewCell.xib */; };
 		0599A05F26DFF8480006E48B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A05E26DFF8480006E48B /* AppDelegate.swift */; };
 		0599A06126DFF8480006E48B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06026DFF8480006E48B /* SceneDelegate.swift */; };
 		0599A06326DFF8480006E48B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06226DFF8480006E48B /* HomeViewController.swift */; };
@@ -41,6 +43,8 @@
 		0574D84C26E38F8D009CE02A /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
 		0574D85326E3AFFB009CE02A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0574D85726E3BE53009CE02A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		0574D85C26E3DF6F009CE02A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		0574D85D26E3DF6F009CE02A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		0599A05B26DFF8480006E48B /* WeatherTask_GizaSys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTask_GizaSys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0599A05E26DFF8480006E48B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0599A06026DFF8480006E48B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,10 +89,20 @@
 		0574D85226E3AFB4009CE02A /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				0574D86126E3DF77009CE02A /* SearchBarTableViewCells */,
 				0574D85326E3AFFB009CE02A /* SearchViewController.swift */,
 				0574D85726E3BE53009CE02A /* SearchPresenter.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		0574D86126E3DF77009CE02A /* SearchBarTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				0574D85C26E3DF6F009CE02A /* SearchTableViewCell.swift */,
+				0574D85D26E3DF6F009CE02A /* SearchTableViewCell.xib */,
+			);
+			path = SearchBarTableViewCells;
 			sourceTree = "<group>";
 		};
 		0599A05226DFF8480006E48B = {
@@ -295,6 +309,7 @@
 				05B968EC26E0E7B400D776E0 /* CityCell.xib in Resources */,
 				0574D84E26E38F8D009CE02A /* DayCell.xib in Resources */,
 				0599A06626DFF8480006E48B /* Main.storyboard in Resources */,
+				0574D85F26E3DF6F009CE02A /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +377,7 @@
 				05AEAC4626E2B5BF00CB282A /* Route.swift in Sources */,
 				05B525F026E0FC53001385C4 /* HomeInteractor.swift in Sources */,
 				05ED751226E2756200281A7A /* DetailsInteractor.swift in Sources */,
+				0574D85E26E3DF6F009CE02A /* SearchTableViewCell.swift in Sources */,
 				05B968EB26E0E7B400D776E0 /* CityCell.swift in Sources */,
 				0574D84D26E38F8D009CE02A /* DayCell.swift in Sources */,
 				05B968DF26E0D45A00D776E0 /* CityRouter.swift in Sources */,

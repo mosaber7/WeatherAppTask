@@ -7,12 +7,17 @@
 
 import UIKit
 
+// MARK: - Search View Protocol
 protocol SearchViewProtocol: AnyObject {
     var searchPresenter: SearchPresenterProtocol?{set get}
+    func showTablView()
+    func reloadData()
 }
 
-class SearchViewController: UIViewController, SearchViewProtocol {
 
+// MARK: - Search View VC
+class SearchViewController: UIViewController, SearchViewProtocol {
+    
     @IBOutlet weak var citiesSearchBar: UISearchBar!
     @IBOutlet weak var resultsTableView: UITableView!
     
@@ -21,19 +26,30 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCell()
 
         // Do any additional setup after loading the view.
     }
-  
+    
+    func showTablView() {
+        resultsTableView.isHidden = false
+    }
+    func reloadData() {
+        resultsTableView.reloadData()
+    }
+      
 }
+
 // MARK: - Search Bar TableView setup
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+         self.searchPresenter?.rowsCount ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = resultsTableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as! SearchTableViewCell
+        self.searchPresenter?.configureCell(cell: cell, indexPath: indexPath )
+        return cell
     }
     
     
@@ -41,10 +57,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
 
 //MARK: - Search Bar setup
 extension SearchViewController: UISearchBarDelegate{
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        resultsTableView.isHidden = false
-        
-    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         citiesSearchBar.resignFirstResponder()
     }
@@ -59,3 +72,12 @@ extension SearchViewController: UISearchBarDelegate{
     }
 }
 
+// MARK: - Private Helper Methods
+
+extension SearchViewController{
+    private func registerCell(){
+        let cityCell = UINib(nibName: "SearchTableViewCell", bundle: nil)
+        resultsTableView.register(cityCell, forCellReuseIdentifier: "SearchTableViewCell")
+    }
+    
+}

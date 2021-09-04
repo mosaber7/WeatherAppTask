@@ -11,7 +11,7 @@ import UIKit
 enum HomeNavigationRoutes: Route {
     
     case Details(City)
-    case Search
+    case Search([City])
     
     var destination: UIViewController{
         switch self {
@@ -20,8 +20,9 @@ enum HomeNavigationRoutes: Route {
             
             return detailsVC
             
-        case .Search:
+        case .Search(let cities):
             let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+            searchVC.searchPresenter = SearchPresenter(view: searchVC, cities: cities)
             return searchVC
             
         }

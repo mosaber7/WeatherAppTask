@@ -54,6 +54,7 @@ struct City: Codable {
     let weather: [Weather]
     let main: Main
     let wind: Wind
+    let name: String
 
 }
 // MARK: - Main
@@ -90,7 +91,7 @@ struct CityViewModel{
     var weatherDescription: String
     
     init(city: City){
-        self.name = "Cairo"
+        self.name = city.name
         self.windSpeed = city.wind.speed
         self.temp = city.main.temp
         self.weatherDescription = city.weather[0].weatherDescription
