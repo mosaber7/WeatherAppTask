@@ -23,7 +23,7 @@ class SearchPresenter: SearchPresenterProtocol {
     var cities: [City]
     private var filteredCities = [City]()
     weak var searchView: SearchViewProtocol?
-    
+    var homePresenter: HomeDetailsDelegate!
     var rowsCount: Int {
         return filteredCities.count
     }
@@ -44,9 +44,10 @@ class SearchPresenter: SearchPresenterProtocol {
         
     }
     
-    init(view: SearchViewProtocol, cities: [City]) {
+    init(view: SearchViewProtocol, cities: [City], homePresenter: HomeDetailsDelegate) {
         self.searchView = view
         self.cities = cities
+        self.homePresenter = homePresenter
         
     }
     
@@ -54,8 +55,8 @@ class SearchPresenter: SearchPresenterProtocol {
         cell.configureCell(cityName: filteredCities[indexPath.row].name)
     }
     func selectCity(at index: IndexPath) {
-        let selectedCityName = cities[index.row].name
-        let detailsRoute = SearchNavigationRoutes.Details(selectedCityName)
+        let selectedCity = cities[index.row]
+        let detailsRoute = SearchNavigationRoutes.Details(selectedCity, homePresenter)
         searchView?.navigate(to: detailsRoute)
     }
     

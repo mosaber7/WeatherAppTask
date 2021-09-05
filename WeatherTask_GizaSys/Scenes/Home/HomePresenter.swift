@@ -15,6 +15,7 @@ protocol  HomePresenterProtocol: AnyObject {
     func ConfigureCell(cell: CityCellViewProtocol, at index: IndexPath)
     func selectCty(at index: IndexPath)
     func searchBarClicked()
+    func removeCity(at index: IndexPath)
     var view: HomeViewProtocol?{get set}
     var numberOfRows: Int{ get}
     var cities: [City]{set get}
@@ -24,6 +25,10 @@ protocol  HomePresenterProtocol: AnyObject {
 protocol HomeInteractorOutputProtocol: AnyObject {
     func dataFetchedSuccessfully(city: City)
     func dateFetchingFailed(with error: Error)
+}
+
+protocol HomeDetailsDelegate: AnyObject{
+    func addToFavorite(city: City)
 }
 
 //MARK: - Home Presenter class
@@ -56,6 +61,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
             self.cities.append(city)
         }
         view?.presentData()
+        print("Data fetiched successfully")
     }
     
     func dateFetchingFailed(with error: Error) {
@@ -65,7 +71,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     func selectCty(at index: IndexPath) {
         guard cities.count > 0 else{return}
         let selectedCity = cities[index.row]
-        let cityDetailsRoute = HomeNavigationRoutes.Details(selectedCity)
+        let cityDetailsRoute = HomeNavigationRoutes.Details(selectedCity, self)
         view?.navigate(to: cityDetailsRoute)
     }
     
@@ -79,8 +85,28 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
     func searchBarClicked() {
         let searchVCRoute = HomeNavigationRoutes.Search
-        view?.navigate(to: searchVCRoute(cities))
+        view?.navigate(to: searchVCRoute(cities, self))
+    }
+    func removeCity(at index: IndexPath) {
+        guard index.row < favoriteCities.count else{
+            return
+        }
+        self.favoriteCities.remove(at: index.row)
     }
     
+    
+}
+//MARK: - confirming to the Details screen delegate
+extension HomePresenter: HomeDetailsDelegate{
+    func addToFavorite(city: City) {
+        if let _ = favoriteCities.firstIndex(of: city){
+            return
+        }
+        if favoriteCities.count == 5 {
+            self.favoriteCities[1] = city
+        }
+        self.favoriteCities.append(city)
+        view?.presentData()
+    }
     
 }

@@ -137,6 +137,9 @@
                                 <state key="normal" title="Add">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addToFavoriteClicked:" destination="gZY-IX-8yZ" eventType="touchUpInside" id="cDD-eE-DhI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HGu-pp-YDa"/>

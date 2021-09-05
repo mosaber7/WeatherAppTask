@@ -10,20 +10,23 @@ import UIKit
 
 
 protocol DetailsViewProtocol: AnyObject {
-    
+    var presenter: DetailPresenterProtocol?{set get}
 }
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, DetailsViewProtocol {
     
     @IBOutlet weak var daysTableView: UITableView!
     @IBOutlet weak var addToFavoriteButton: UIButton!
-    
+    var presenter: DetailPresenterProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
         addToFavoriteButton.layer.cornerRadius = addToFavoriteButton.frame.height/2
     }
     
+    @IBAction func addToFavoriteClicked(_ sender: Any) {
+        self.presenter?.addToFavorite()
+    }
     
     
 }

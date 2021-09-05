@@ -98,4 +98,11 @@ struct CityViewModel{
         
     }
 }
+extension City: Equatable{
+    static func == (lhs: City, rhs: City) -> Bool {
+        lhs.name == rhs.name
+    }
+    
+    
+}
     

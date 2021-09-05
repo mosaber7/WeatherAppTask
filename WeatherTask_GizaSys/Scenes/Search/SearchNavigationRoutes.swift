@@ -10,12 +10,12 @@ import UIKit
 
 enum SearchNavigationRoutes: Route {
     
-    case Details(String)
+    case Details(City, HomeDetailsDelegate)
     var destination: UIViewController{
         switch self {
-        case .Details (let cityName):
+        case .Details (let city, let delegate):
             let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
-            
+            detailsVC.presenter = DetailsPresenter(view: detailsVC, city: city, homePresenter: delegate )
             return detailsVC
             
         }
@@ -24,7 +24,7 @@ enum SearchNavigationRoutes: Route {
     
     var style: NavigationStyle{
         switch self {
-        case .Details(_):
+        case .Details:
             return .push
         
     }
