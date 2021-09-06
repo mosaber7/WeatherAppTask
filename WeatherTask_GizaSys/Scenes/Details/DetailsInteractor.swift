@@ -10,18 +10,26 @@ import Foundation
 
 
 protocol DetailsInteractorProtocol {
-    var presenter: DetailPresenterProtocol?{get set}
+    var presenter: DetailsPresenterInteractorProtocol?{get set}
+    func getCityWeekWeather(cityName: String)
     
 }
 
 class DetailsInteractor: DetailsInteractorProtocol {
-    var presenter: DetailPresenterProtocol?
+    var presenter: DetailsPresenterInteractorProtocol?
     private let request = cityRequest()
     
     
-    func getCityFullWeather(){
-        
+    func getCityWeekWeather(cityName: String){
+        request.retrieveCityWeekWeather(cityName: cityName) { [weak self] result in
+            switch result{
+            
+            case .success(let cityWeekWeather):
+                print("dataFetched 2")
+                self?.presenter?.cityWeekDataFetchedSuccessfully(weekWeather: cityWeekWeather)
+            case .failure(let error):
+                self?.presenter?.dataFetchingFailed(with: error)
+            }
+        }
     }
-
-
 }

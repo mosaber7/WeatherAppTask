@@ -20,8 +20,8 @@ protocol SearchPresenterProtocol {
 class SearchPresenter: SearchPresenterProtocol {
     
     
-    var cities: [City]
-    private var filteredCities = [City]()
+    var cities: [CityDayWeather]
+    private var filteredCities = [CityDayWeather]()
     weak var searchView: SearchViewProtocol?
     var homePresenter: HomeDetailsDelegate!
     var rowsCount: Int {
@@ -44,7 +44,7 @@ class SearchPresenter: SearchPresenterProtocol {
         
     }
     
-    init(view: SearchViewProtocol, cities: [City], homePresenter: HomeDetailsDelegate) {
+    init(view: SearchViewProtocol, cities: [CityDayWeather], homePresenter: HomeDetailsDelegate) {
         self.searchView = view
         self.cities = cities
         self.homePresenter = homePresenter

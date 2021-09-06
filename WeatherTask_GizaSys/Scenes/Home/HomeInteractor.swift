@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import CoreLocation
 
 //MARK: - HomeInteractorProtocol
 protocol HomeInteractorInputProtocol {
     var presenter: HomeInteractorOutputProtocol?{get set}
-    func getCity()
+    func getCitiesDayWeather()
+    func getUserLocation(completion: @escaping ((String?)-> Void))
+    func getCurrentCityDayWeather(cityName: String)
 }
 
 //MARK: - Interactor
@@ -19,19 +22,37 @@ class HomeInteractor: HomeInteractorInputProtocol{
    weak var presenter: HomeInteractorOutputProtocol?
     private let request = cityRequest()
     
-    func getCity(){
-    request.retrieveCityWeather(city: "Cairo") { [weak self] (result) in
+    func getCitiesDayWeather(){
+    request.retrieveCityDayWeather(cityName: "Cairo") { [weak self] (result) in
         switch result{
         
         case .success(let city):
-            self?.presenter?.dataFetchedSuccessfully(city: city)
+            self?.presenter?.CityDayDataFetchedSuccessfully(cityDayWeather: city)
         case .failure(let error):
-            self?.presenter?.dateFetchingFailed(with: error)
+            self?.presenter?.dataFetchingFailed(with: error)
         }
         
     }
     
     }
-    
+    func getCurrentCityDayWeather(cityName: String){
+        
+        request.retrieveCityDayWeather(cityName: cityName) { [weak self] result in
+            switch result{
+            
+            case .success(let cityDayWeather):
+                self?.presenter?.currentCityLocationFetchedSuccessfuly(cityDayWeather: cityDayWeather)
+            case .failure(let error):
+                self?.presenter?.currentCityLocationFetchedWithError(error: error)
+            }
+        }
+    }
+    func getUserLocation(completion: @escaping((String?)-> Void)){
+        LocationManager.shared.finishup { (cityName) in
+            completion(cityName)
+        }
 }
+
+}
+
  

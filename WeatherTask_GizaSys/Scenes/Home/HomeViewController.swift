@@ -11,7 +11,7 @@ import CoreLocation
 //MARK:- View Protocol
 protocol HomeViewProtocol: AnyObject, NavigationRoute {
     var presenter: HomePresenterProtocol?{get set}
-    func presentData()
+    func reloadData()
     
 }
 
@@ -28,11 +28,16 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         homeSearchBar.delegate = self
-        presenter?.presenterDidLoad()
+        title = "Home"
+        DispatchQueue.main.async {
+            self.presenter?.presenterDidLoad()
+        }
+        
         registerCell()
+        
             }
     
-    func presentData() {
+    func reloadData() {
         homeTableView.reloadData()
     }
     
@@ -51,7 +56,7 @@ extension HomeViewController{
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.selectCty(at: indexPath)
+        self.presenter?.selectedCity(at: indexPath)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{

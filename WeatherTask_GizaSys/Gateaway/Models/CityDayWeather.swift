@@ -50,7 +50,7 @@ import Foundation
 //   "cod":200
 //}
 
-struct City: Codable {
+struct CityDayWeather: Codable {
     let weather: [Weather]
     let main: Main
     let wind: Wind
@@ -90,7 +90,7 @@ struct CityViewModel{
     var temp: Double
     var weatherDescription: String
     
-    init(city: City){
+    init(city: CityDayWeather){
         self.name = city.name
         self.windSpeed = city.wind.speed
         self.temp = city.main.temp
@@ -98,11 +98,10 @@ struct CityViewModel{
         
     }
 }
-extension City: Equatable{
-    static func == (lhs: City, rhs: City) -> Bool {
+
+extension CityDayWeather: Equatable{
+    static func == (lhs: CityDayWeather, rhs: CityDayWeather) -> Bool {
         lhs.name == rhs.name
     }
-    
-    
 }
     

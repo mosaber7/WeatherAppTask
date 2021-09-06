@@ -10,12 +10,15 @@ import UIKit
 
 enum SearchNavigationRoutes: Route {
     
-    case Details(City, HomeDetailsDelegate)
+    case Details(CityDayWeather, HomeDetailsDelegate)
     var destination: UIViewController{
         switch self {
         case .Details (let city, let delegate):
             let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
-            detailsVC.presenter = DetailsPresenter(view: detailsVC, city: city, homePresenter: delegate )
+            let interactor = DetailsInteractor()
+            let presenter = DetailsPresenter(view: detailsVC, city: city, homePresenter: delegate, interactor: interactor )
+            detailsVC.presenter = presenter
+            interactor.presenter = presenter
             return detailsVC
             
         }
