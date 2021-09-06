@@ -15,14 +15,28 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
     let manager = CLLocationManager()
     
     var compeletion: ((CLLocation)-> Void)?
+    var statue: CLAuthorizationStatus?
     
-    
-     func getUserLocation(compeletion: @escaping ((CLLocation)-> Void)){
-        self.compeletion = compeletion
+    func getUserLocation(compeletion: @escaping ((CLLocation)-> Void)){
+        
         manager.requestWhenInUseAuthorization()
         manager.delegate = self
         manager.startUpdatingLocation()
-        
+        statue = manager.authorizationStatus
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            self.compeletion = nil
+        case .restricted:
+            self.compeletion = nil
+        case .denied:
+            self.compeletion = nil
+        case .authorizedAlways:
+            self.compeletion = compeletion
+        case .authorizedWhenInUse:
+            self.compeletion = compeletion
+        @unknown default:
+            self.compeletion = nil
+        }
         
     }
     
@@ -34,7 +48,7 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
         compeletion?(location)
         manager.stopUpdatingLocation()
     }
-     func resolveLocationName(with location: CLLocation, compeletion: @escaping ((String?)-> Void)){
+    func resolveLocationName(with location: CLLocation, compeletion: @escaping ((String?)-> Void)){
         
         let geoCoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(location, preferredLocale: .current) { placesMarks, error in
@@ -48,17 +62,22 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
         
     }
     
-    func finishup(completion: @escaping ((String?)-> Void)){
+    func getCityName(completion: @escaping ((String?)-> Void)){
+        
         LocationManager.shared.getUserLocation { (location) in
-            self.betngan(with: location) { (locationName) in
+            
+            self.helper(with: location) { (locationName) in
                 completion(locationName)
+
             }
             
         }
     }
-    func betngan(with location: CLLocation, completion: @escaping ((String?)-> Void)){
+    
+    private func helper(with location: CLLocation, completion: @escaping ((String?)-> Void)){
         LocationManager.shared.resolveLocationName(with: location) { (LocationName) in
-           completion(LocationName)
+            completion(LocationName)
         }
+       
     }
 }

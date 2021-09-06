@@ -41,6 +41,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
         return favoriteCities.count
     }
     
+    
     var cities = [CityDayWeather]()
     var favoriteCities =  [CityDayWeather]()
     weak var view: HomeViewProtocol?

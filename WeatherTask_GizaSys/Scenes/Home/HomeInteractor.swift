@@ -19,21 +19,21 @@ protocol HomeInteractorInputProtocol {
 //MARK: - Interactor
 
 class HomeInteractor: HomeInteractorInputProtocol{
-   weak var presenter: HomeInteractorOutputProtocol?
+    weak var presenter: HomeInteractorOutputProtocol?
     private let request = cityRequest()
     
     func getCitiesDayWeather(){
-    request.retrieveCityDayWeather(cityName: "Cairo") { [weak self] (result) in
-        switch result{
-        
-        case .success(let city):
-            self?.presenter?.CityDayDataFetchedSuccessfully(cityDayWeather: city)
-        case .failure(let error):
-            self?.presenter?.dataFetchingFailed(with: error)
+        request.retrieveCityDayWeather(cityName: "Cairo") { [weak self] (result) in
+            switch result{
+            
+            case .success(let city):
+                self?.presenter?.CityDayDataFetchedSuccessfully(cityDayWeather: city)
+            case .failure(let error):
+                self?.presenter?.dataFetchingFailed(with: error)
+            }
+            
         }
         
-    }
-    
     }
     func getCurrentCityDayWeather(cityName: String){
         
@@ -43,16 +43,17 @@ class HomeInteractor: HomeInteractorInputProtocol{
             case .success(let cityDayWeather):
                 self?.presenter?.currentCityLocationFetchedSuccessfuly(cityDayWeather: cityDayWeather)
             case .failure(let error):
+  
                 self?.presenter?.currentCityLocationFetchedWithError(error: error)
             }
         }
     }
     func getUserLocation(completion: @escaping((String?)-> Void)){
-        LocationManager.shared.finishup { (cityName) in
+        LocationManager.shared.getCityName { (cityName) in
             completion(cityName)
         }
+    }
+    
 }
 
-}
 
- 

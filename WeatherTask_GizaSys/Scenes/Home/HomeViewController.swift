@@ -32,9 +32,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         DispatchQueue.main.async {
             self.presenter?.presenterDidLoad()
         }
-        
         registerCell()
-        
             }
     
     func reloadData() {
