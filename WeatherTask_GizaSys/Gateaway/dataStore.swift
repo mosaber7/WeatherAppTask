@@ -10,7 +10,7 @@
 //import UIKit
 //
 //class ItemStore{
-//    var allItems : [[Item]] = [[],[]]
+//    var allItems : [Item] = []
 //
 //    let itemArchiveURL: URL = {
 //        let documentsDirectories =
@@ -21,42 +21,29 @@
 //
 //    @discardableResult func createItem() -> Item{
 //        let newItem = Item(random: true)
-//        if newItem.isCheeperTHanFifty{
-//            allItems[0].append(newItem)
-//        }
-//        else if !newItem.isCheeperTHanFifty{
-//            allItems[1].append(newItem)
-//        }
+//       allItems.append(newItem)
 //
 //        return newItem
 //    }
 //    func removeItem(_ item: Item){
-//        if item.isCheeperTHanFifty{
-//            if let index = allItems[0].firstIndex(of: item){
-//                allItems[0].remove(at: index)
+//            if let index = allItems.firstIndex(of: item){
+//                allItems.remove(at: index)
 //            }
 //
-//        }
-//        else if !item.isCheeperTHanFifty{
-//            if let index = allItems[1].firstIndex(of: item){
-//                allItems[1].remove(at: index)
-//            }
-//        }
+//
 //
 //    }
-//    func moveItem(from fromIndex: Int, toIndex: Int, fromSection : Int, toSection: Int){
-//        if fromIndex == toIndex || fromSection != toSection{
+//    func moveItem(from fromIndex: Int, toIndex: Int){
+//        if fromIndex == toIndex {
 //            return
 //        }
-//        let movedItem = allItems[fromSection][fromIndex]
-//        allItems[fromSection].remove(at: fromIndex)
+//        let movedItem = allItems[fromIndex]
+//        allItems.remove(at: fromIndex)
 //
-//        if movedItem.isCheeperTHanFifty{
-//            allItems[0].insert(movedItem, at: toIndex)
 //
-//        }
-//        else{
-//            allItems[1].insert(movedItem, at: toIndex)}
+//            allItems.insert(movedItem, at: toIndex)
+//
+//
 //    }
 //
 //    @objc func saveChanges()->Bool{
@@ -76,7 +63,7 @@
 //        do {
 //                let data = try Data(contentsOf: itemArchiveURL)
 //                let unarchiver = PropertyListDecoder()
-//                let items = try unarchiver.decode([[Item]].self, from: data)
+//                let items = try unarchiver.decode([Item].self, from: data)
 //                allItems = items
 //        } catch{
 //            print("Error reading in saved items \(error)")
