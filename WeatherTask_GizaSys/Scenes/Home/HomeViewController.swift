@@ -22,8 +22,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
     
-    @IBOutlet weak var homeSearchBar: UISearchBar!
-    @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet private weak var homeSearchBar: UISearchBar!
+    @IBOutlet private weak var homeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +72,7 @@ extension HomeViewController: UITableViewDataSource{
         self.presenter?.numberOfRows ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = homeTableView.dequeue() as CityCell
         presenter?.ConfigureCell(cell: cell, at: indexPath)
         return cell 

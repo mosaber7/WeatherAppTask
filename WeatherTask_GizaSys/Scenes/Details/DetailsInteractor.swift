@@ -25,7 +25,6 @@ class DetailsInteractor: DetailsInteractorProtocol {
             switch result{
             
             case .success(let cityWeekWeather):
-                print("dataFetched 2")
                 self?.presenter?.cityWeekDataFetchedSuccessfully(weekWeather: cityWeekWeather)
             case .failure(let error):
                 self?.presenter?.dataFetchingFailed(with: error)

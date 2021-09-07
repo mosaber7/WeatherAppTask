@@ -11,7 +11,7 @@ import Alamofire
 class cityRequest{
 func retrieveCityDayWeather(cityName: String, _ compeletionHandler: @escaping(Result<CityDayWeather, AFError>)-> Void){
     let route = CityRouter.day(cityName)
-    AF.request(route).responseDecodable { (responce: DataResponse<CityDayWeather, AFError>) in
+    AF.request(route).validate().responseDecodable { (responce: DataResponse<CityDayWeather, AFError>) in
         switch responce.result{
         
         case .success(let cityDayWeather):
@@ -26,13 +26,12 @@ func retrieveCityDayWeather(cityName: String, _ compeletionHandler: @escaping(Re
     //MARK: - Details screen API call
     func retrieveCityWeekWeather(cityName: String, _ compeltion: @escaping(Result<[CityWeekWeather], AFError>)-> Void){
         let route = CityRouter.week(cityName)
-        AF.request(route).responseDecodable { (responce: DataResponse<CityWeekWeatherContainer, AFError>) in
+        AF.request(route).validate().responseDecodable { (responce: DataResponse<CityWeekWeatherContainer, AFError>) in
             switch responce.result{
             
             case .success(let cityWeekWeather):
                 compeltion(.success(cityWeekWeather.CityWeekWeather))
             case .failure(let error):
-                print(error)
                 compeltion(.failure(error))
             }
         }

@@ -18,8 +18,8 @@ protocol SearchViewProtocol: AnyObject, NavigationRoute {
 // MARK: - Search View VC
 class SearchViewController: UIViewController, SearchViewProtocol {
     
-    @IBOutlet weak var citiesSearchBar: UISearchBar!
-    @IBOutlet weak var resultsTableView: UITableView!
+    @IBOutlet private weak var citiesSearchBar: UISearchBar!
+    @IBOutlet private weak var resultsTableView: UITableView!
     
     var searchPresenter: SearchPresenterProtocol?
     

@@ -13,10 +13,10 @@ protocol DayCellViewProtocol{
 
 class DayCell: UITableViewCell {
 
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var tempLabel: UILabel!
-    @IBOutlet weak var windLabel: UILabel!
-    @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet private weak var dayLabel: UILabel!
+    @IBOutlet private weak var tempLabel: UILabel!
+    @IBOutlet private weak var windLabel: UILabel!
+    @IBOutlet private weak var weatherLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

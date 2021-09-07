@@ -15,7 +15,7 @@ protocol SearchCellViewProtocol {
 
 class SearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

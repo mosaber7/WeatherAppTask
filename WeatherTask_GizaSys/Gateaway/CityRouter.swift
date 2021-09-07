@@ -34,7 +34,6 @@ enum CityRouter: URLRequestConvertible{
         var path:String{
             switch self {
             case .day(let cityNameString), .week(let cityNameString):
-                print(cityNameString)
                 return cityNameString
             }
         }

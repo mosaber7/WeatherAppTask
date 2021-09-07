@@ -14,10 +14,10 @@ protocol  CityCellViewProtocol {
 
 //MARK: - CityCell
 class CityCell: UITableViewCell {
-    @IBOutlet weak var cityNameLabel: UILabel!
-    @IBOutlet weak var tempLabel: UILabel!
-    @IBOutlet weak var windSpeedLabel: UILabel!
-    @IBOutlet weak var weatherConditionLabel: UILabel!
+    @IBOutlet private weak var cityNameLabel: UILabel!
+    @IBOutlet private weak var tempLabel: UILabel!
+    @IBOutlet private weak var windSpeedLabel: UILabel!
+    @IBOutlet private weak var weatherConditionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

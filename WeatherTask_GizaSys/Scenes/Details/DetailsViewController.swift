@@ -17,8 +17,8 @@ protocol DetailsViewProtocol: AnyObject {
 
 class DetailsViewController: UIViewController, DetailsViewProtocol {
     
-    @IBOutlet weak var daysTableView: UITableView!
-    @IBOutlet weak var addToFavoriteButton: UIButton!
+    @IBOutlet private weak var daysTableView: UITableView!
+    @IBOutlet private weak var addToFavoriteButton: UIButton!
     var presenter: DetailPresenterProtocol?
     override func viewDidLoad() {
         title = self.presenter?.title

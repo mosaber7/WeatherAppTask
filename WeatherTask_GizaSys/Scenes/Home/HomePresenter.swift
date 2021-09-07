@@ -40,8 +40,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     var numberOfRows: Int{
         return favoriteCities.count
     }
-    
-    
+
     var cities = [CityDayWeather]()
     var favoriteCities =  [CityDayWeather]()
     weak var view: HomeViewProtocol?
@@ -70,7 +69,6 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
         for _ in 0..<5{
             self.cities.append(cityDayWeather)
         }
- 
         print("Data fetiched successfully")
     }
     
@@ -116,9 +114,9 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
         }
         self.favoriteCities.remove(at: index.row)
     }
-    
-    
 }
+
+
 //MARK: - confirming to the Details screen delegate
 extension HomePresenter: HomeDetailsDelegate{
     
