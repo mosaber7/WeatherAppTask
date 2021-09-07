@@ -16,7 +16,9 @@ enum HomeNavigationRoutes: Route {
     var destination: UIViewController{
         switch self {
         case .Details (let city, let homePresenter):
-            let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
+            guard let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "\(DetailsViewController.self)") as? DetailsViewController else{
+                fatalError("Couldn't find VC with the identifier \(DetailsViewController.self)")
+            }
     let interactor = DetailsInteractor()
             let persenter = DetailsPresenter(view: detailsVC, city: city, homePresenter: homePresenter, interactor: interactor)
             interactor.presenter = persenter
@@ -25,7 +27,9 @@ enum HomeNavigationRoutes: Route {
             return detailsVC
             
         case .Search(let cities, let homePresenter):
-            let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+            guard let searchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SearchViewController") as? SearchViewController else{
+                fatalError("Couldn't find VC with the identifier \(SearchViewController.self)")
+            }
             searchVC.searchPresenter = SearchPresenter(view: searchVC, cities: cities, homePresenter: homePresenter)
 
             return searchVC

@@ -14,7 +14,9 @@ enum SearchNavigationRoutes: Route {
     var destination: UIViewController{
         switch self {
         case .Details (let city, let delegate):
-            let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
+            guard let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "\(DetailsViewController.self)") as? DetailsViewController else{
+                fatalError("Couldn't find VC with the identifier \(DetailsViewController.self)")
+            }
             let interactor = DetailsInteractor()
             let presenter = DetailsPresenter(view: detailsVC, city: city, homePresenter: delegate, interactor: interactor )
             detailsVC.presenter = presenter

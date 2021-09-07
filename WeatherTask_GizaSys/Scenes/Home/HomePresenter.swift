@@ -40,7 +40,8 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     var numberOfRows: Int{
         return favoriteCities.count
     }
-
+    
+    private let numberOfMainCities = 5
     var cities = [CityDayWeather]()
     var favoriteCities =  [CityDayWeather]()
     weak var view: HomeViewProtocol?
@@ -123,7 +124,7 @@ extension HomePresenter: HomeDetailsDelegate{
     
     func addToFavorite(city: CityDayWeather) {
         
-        if favoriteCities.count == 5 {
+        if favoriteCities.count == self.numberOfMainCities {
             self.favoriteCities[1] = city
         }
         self.favoriteCities.append(city)

@@ -55,10 +55,12 @@ extension HomeViewController{
 extension HomeViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.presenter?.selectedCity(at: indexPath)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete{
             self.presenter?.removeCity(at: indexPath)
             homeTableView.deleteRows(at: [indexPath], with: .fade)
@@ -69,16 +71,16 @@ extension HomeViewController: UITableViewDelegate{
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         self.presenter?.numberOfRows ?? 0
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = homeTableView.dequeue() as CityCell
         presenter?.ConfigureCell(cell: cell, at: indexPath)
         return cell 
     }
-    
-    
 }
 
 //MARK: - Search Bar Setup
@@ -90,6 +92,4 @@ extension HomeViewController: UISearchBarDelegate{
     }
     
 }
-
-
 
