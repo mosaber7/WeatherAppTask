@@ -87,10 +87,10 @@ struct Wind: Codable {
 
 
 class CityViewModel{
-    var  name: String?
-     var windSpeed: String?
-     var temp: String?
-     var weatherDescription: String?
+    let  name: String
+     let windSpeed: String
+     let temp: String
+     let weatherDescription: String
     
     init(city: CityDayWeather){
         

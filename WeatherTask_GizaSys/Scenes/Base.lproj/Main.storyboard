@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Rvp-5i-O9h">
+                            <searchBar contentMode="redraw" placeholder="City" translatesAutoresizingMaskIntoConstraints="NO" id="Rvp-5i-O9h">
                                 <rect key="frame" x="16" y="60" width="382" height="56"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1333333333" green="0.1333333333" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>

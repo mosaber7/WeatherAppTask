@@ -19,6 +19,8 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet private weak var daysTableView: UITableView!
     @IBOutlet private weak var addToFavoriteButton: UIButton!
+    
+    
     var presenter: DetailPresenterProtocol?
     override func viewDidLoad() {
         title = self.presenter?.title

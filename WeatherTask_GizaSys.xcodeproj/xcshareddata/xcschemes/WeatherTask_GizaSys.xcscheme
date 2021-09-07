@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "05D31F5126E825710052B59B"
+               BuildableName = "WeatherTask_GizaSysTests.xctest"
+               BlueprintName = "WeatherTask_GizaSysTests"
+               ReferencedContainer = "container:WeatherTask_GizaSys.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
