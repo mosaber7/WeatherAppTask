@@ -16,10 +16,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJF-UR-r4E">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fI0-or-5vt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="XEJ-qn-cKW"/>
+                            <constraint firstAttribute="height" constant="50" id="IcK-uE-9d3"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -27,17 +27,17 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="NJF-UR-r4E" secondAttribute="bottom" id="eXC-Pq-1gz"/>
-                    <constraint firstAttribute="trailing" secondItem="NJF-UR-r4E" secondAttribute="trailing" id="fad-HW-13p"/>
-                    <constraint firstItem="NJF-UR-r4E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lbt-bC-9xd"/>
-                    <constraint firstItem="NJF-UR-r4E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="w80-7h-HrL"/>
+                    <constraint firstAttribute="bottom" secondItem="fI0-or-5vt" secondAttribute="bottom" id="53Y-bL-q1q"/>
+                    <constraint firstAttribute="trailing" secondItem="fI0-or-5vt" secondAttribute="trailing" id="8X3-Hn-WtR"/>
+                    <constraint firstItem="fI0-or-5vt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wOR-eY-W2S"/>
+                    <constraint firstItem="fI0-or-5vt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zNu-Yn-z6e"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="nameLabel" destination="NJF-UR-r4E" id="iva-zN-zrA"/>
+                <outlet property="nameLabel" destination="fI0-or-5vt" id="28H-pO-IDL"/>
             </connections>
-            <point key="canvasLocation" x="133" y="96"/>
+            <point key="canvasLocation" x="44.927536231884062" y="109.82142857142857"/>
         </tableViewCell>
     </objects>
 </document>

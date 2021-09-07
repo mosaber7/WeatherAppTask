@@ -47,8 +47,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
 // MARK: - Private functions
 extension HomeViewController{
     private func registerCell(){
-        let cityCell = UINib(nibName: "CityCell", bundle: nil)
-        homeTableView.register(cityCell, forCellReuseIdentifier: "CityCell")
+        homeTableView.registerNib(cell: CityCell.self)
     }
 }
 
@@ -74,7 +73,7 @@ extension HomeViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = homeTableView.dequeueReusableCell(withIdentifier: "CityCell") as! CityCell
+        let cell = homeTableView.dequeue() as CityCell
         presenter?.ConfigureCell(cell: cell, at: indexPath)
         return cell 
     }

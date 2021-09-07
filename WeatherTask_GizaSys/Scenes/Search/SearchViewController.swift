@@ -47,7 +47,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultsTableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as! SearchTableViewCell
+        let cell = resultsTableView.dequeue() as SearchTableViewCell
         self.searchPresenter?.configureCell(cell: cell, indexPath: indexPath )
         return cell
     }
@@ -75,8 +75,8 @@ extension SearchViewController: UISearchBarDelegate{
 
 extension SearchViewController{
     private func registerCell(){
-        let cityCell = UINib(nibName: "SearchTableViewCell", bundle: nil)
-        resultsTableView.register(cityCell, forCellReuseIdentifier: "SearchTableViewCell")
+        
+        resultsTableView.registerNib(cell: SearchTableViewCell.self)
     }
     
 }

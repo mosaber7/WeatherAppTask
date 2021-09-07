@@ -46,8 +46,8 @@ class DetailsViewController: UIViewController, DetailsViewProtocol {
 //MARK: - Helper Methods
 extension DetailsViewController{
     private func registerCell(){
-        let dayCell = UINib(nibName: "DayCell", bundle: nil)
-        daysTableView.register(dayCell, forCellReuseIdentifier: "DayCell")
+        
+        daysTableView.registerNib(cell: DayCell.self)
     }
 }
 
@@ -58,7 +58,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = daysTableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath) as! DayCell
+        let cell = daysTableView.dequeue() as DayCell
         self.presenter?.configureCell(cell: cell, at: indexPath)
         return cell
     }

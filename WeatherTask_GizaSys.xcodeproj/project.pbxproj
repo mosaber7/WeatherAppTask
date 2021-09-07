@@ -12,8 +12,6 @@
 		0574D84E26E38F8D009CE02A /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0574D84C26E38F8D009CE02A /* DayCell.xib */; };
 		0574D85426E3AFFB009CE02A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85326E3AFFB009CE02A /* SearchViewController.swift */; };
 		0574D85826E3BE53009CE02A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85726E3BE53009CE02A /* SearchPresenter.swift */; };
-		0574D85E26E3DF6F009CE02A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85C26E3DF6F009CE02A /* SearchTableViewCell.swift */; };
-		0574D85F26E3DF6F009CE02A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0574D85D26E3DF6F009CE02A /* SearchTableViewCell.xib */; };
 		0574D86626E3F6C6009CE02A /* SearchNavigationRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D86526E3F6C6009CE02A /* SearchNavigationRoutes.swift */; };
 		0574D86926E3FA4F009CE02A /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D86826E3FA4F009CE02A /* SearchRouter.swift */; };
 		0599A05F26DFF8480006E48B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599A05E26DFF8480006E48B /* AppDelegate.swift */; };
@@ -41,6 +39,9 @@
 		05ED750E26E2745E00281A7A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED750D26E2745E00281A7A /* DetailPresenter.swift */; };
 		05ED751226E2756200281A7A /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED751126E2756200281A7A /* DetailsInteractor.swift */; };
 		05ED751526E2759700281A7A /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED751426E2759700281A7A /* DetailsRouter.swift */; };
+		05F510C126E7D1F00073585D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F510C026E7D1F00073585D /* UITableView+Extension.swift */; };
+		05F510C626E7D5190073585D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F510C426E7D5190073585D /* SearchTableViewCell.swift */; };
+		05F510C726E7D5190073585D /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F510C526E7D5190073585D /* SearchTableViewCell.xib */; };
 		5E05FBCE0FFCD36859818820 /* Pods_WeatherTask_GizaSys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0929CF7406E3F919F12ADA5 /* Pods_WeatherTask_GizaSys.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +51,6 @@
 		0574D84C26E38F8D009CE02A /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
 		0574D85326E3AFFB009CE02A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0574D85726E3BE53009CE02A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
-		0574D85C26E3DF6F009CE02A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		0574D85D26E3DF6F009CE02A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		0574D86526E3F6C6009CE02A /* SearchNavigationRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationRoutes.swift; sourceTree = "<group>"; };
 		0574D86826E3FA4F009CE02A /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		0599A05B26DFF8480006E48B /* WeatherTask_GizaSys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTask_GizaSys.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +80,9 @@
 		05ED750D26E2745E00281A7A /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		05ED751126E2756200281A7A /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
 		05ED751426E2759700281A7A /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		05F510C026E7D1F00073585D /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		05F510C426E7D5190073585D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		05F510C526E7D5190073585D /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		35FB4BEE46BB57DBD41CA971 /* Pods-WeatherTask_GizaSys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTask_GizaSys.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTask_GizaSys/Pods-WeatherTask_GizaSys.debug.xcconfig"; sourceTree = "<group>"; };
 		6A4690898B65BA8BAAAC63F4 /* Pods-WeatherTask_GizaSys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTask_GizaSys.release.xcconfig"; path = "Target Support Files/Pods-WeatherTask_GizaSys/Pods-WeatherTask_GizaSys.release.xcconfig"; sourceTree = "<group>"; };
 		E0929CF7406E3F919F12ADA5 /* Pods_WeatherTask_GizaSys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherTask_GizaSys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,8 +115,8 @@
 		0574D86126E3DF77009CE02A /* SearchBarTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				0574D85C26E3DF6F009CE02A /* SearchTableViewCell.swift */,
-				0574D85D26E3DF6F009CE02A /* SearchTableViewCell.xib */,
+				05F510C426E7D5190073585D /* SearchTableViewCell.swift */,
+				05F510C526E7D5190073585D /* SearchTableViewCell.xib */,
 			);
 			path = SearchBarTableViewCells;
 			sourceTree = "<group>";
@@ -169,6 +171,7 @@
 		05AEAC4326E2B4E900CB282A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				05F510BF26E7D1CF0073585D /* TableView */,
 				05AEAC4426E2B4F800CB282A /* NavigationRoute */,
 			);
 			path = Components;
@@ -244,6 +247,14 @@
 				0574D84C26E38F8D009CE02A /* DayCell.xib */,
 			);
 			path = DetailsTableViewCell;
+			sourceTree = "<group>";
+		};
+		05F510BF26E7D1CF0073585D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				05F510C026E7D1F00073585D /* UITableView+Extension.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		CE8B2C3144E3D1179157CE8A /* Pods */ = {
@@ -327,7 +338,7 @@
 				05B968EC26E0E7B400D776E0 /* CityCell.xib in Resources */,
 				0574D84E26E38F8D009CE02A /* DayCell.xib in Resources */,
 				0599A06626DFF8480006E48B /* Main.storyboard in Resources */,
-				0574D85F26E3DF6F009CE02A /* SearchTableViewCell.xib in Resources */,
+				05F510C726E7D5190073585D /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +401,7 @@
 				05ED751526E2759700281A7A /* DetailsRouter.swift in Sources */,
 				0599A05F26DFF8480006E48B /* AppDelegate.swift in Sources */,
 				0599A06126DFF8480006E48B /* SceneDelegate.swift in Sources */,
+				05F510C626E7D5190073585D /* SearchTableViewCell.swift in Sources */,
 				05ED678826E62ACE00D0C8F9 /* dataStore.swift in Sources */,
 				05AEAC4C26E2B81A00CB282A /* HomeNavigationRoutes.swift in Sources */,
 				0574D85426E3AFFB009CE02A /* SearchViewController.swift in Sources */,
@@ -399,8 +411,8 @@
 				05ED750E26E2745E00281A7A /* DetailPresenter.swift in Sources */,
 				05AEAC4626E2B5BF00CB282A /* Route.swift in Sources */,
 				05B525F026E0FC53001385C4 /* HomeInteractor.swift in Sources */,
+				05F510C126E7D1F00073585D /* UITableView+Extension.swift in Sources */,
 				05ED751226E2756200281A7A /* DetailsInteractor.swift in Sources */,
-				0574D85E26E3DF6F009CE02A /* SearchTableViewCell.swift in Sources */,
 				05B968EB26E0E7B400D776E0 /* CityCell.swift in Sources */,
 				0574D84D26E38F8D009CE02A /* DayCell.swift in Sources */,
 				05B968DF26E0D45A00D776E0 /* CityRouter.swift in Sources */,

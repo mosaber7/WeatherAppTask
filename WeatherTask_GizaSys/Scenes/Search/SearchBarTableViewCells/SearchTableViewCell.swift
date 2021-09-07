@@ -2,10 +2,11 @@
 //  SearchTableViewCell.swift
 //  WeatherTask_GizaSys
 //
-//  Created by Saber on 04/09/2021.
+//  Created by Saber on 07/09/2021.
 //
 
 import UIKit
+
 
 protocol SearchCellViewProtocol {
     func configureCell(cityName: String)
@@ -38,3 +39,5 @@ extension SearchTableViewCell: SearchCellViewProtocol{
     
     
 }
+
+
