@@ -55,7 +55,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
     
     func presenterDidLoad() {
-            self.interactor.getCitiesDayWeather()
+        self.interactor.getCitiesDayWeather()
         self.interactor.getUserLocation { (cityName) in
             guard let cityName = cityName else{
                 self.interactor.getCurrentCityDayWeather(cityName: "London")
@@ -64,9 +64,8 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
             self.interactor.getCurrentCityDayWeather(cityName: cityName)
             self.view?.reloadData()
         }
-        
-        
     }
+    
     func CityDayDataFetchedSuccessfully(cityDayWeather: CityDayWeather) {
         for _ in 0..<5{
             self.cities.append(cityDayWeather)
@@ -81,11 +80,13 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     
     func currentCityLocationFetchedSuccessfuly(cityDayWeather: CityDayWeather){
         self.favoriteCities.append(cityDayWeather)
-        view?.reloadData()
+        self.cities.append(cityDayWeather)
+        self.view?.reloadData()
     }
     
     func currentCityLocationFetchedWithError(error: Error){
-        print(error)
+        // defult current city set as Lodon
+        print("error")
     }
     
     func selectedCity(at index: IndexPath) {

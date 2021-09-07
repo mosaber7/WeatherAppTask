@@ -69,7 +69,6 @@ enum CityRouter: URLRequestConvertible{
     
         func asURLRequest() throws -> URLRequest {
             let urlString = CityRouter.baseUrl + self.callType + self.path + self.APIKey
-            print(urlString)
             let url = URL(string: urlString)!
             var request = URLRequest(url: url)
             request.method = self.httpMethod

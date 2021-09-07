@@ -30,7 +30,6 @@ func retrieveCityDayWeather(cityName: String, _ compeletionHandler: @escaping(Re
             switch responce.result{
             
             case .success(let cityWeekWeather):
-                print("data fetched 1")
                 compeltion(.success(cityWeekWeather.CityWeekWeather))
             case .failure(let error):
                 print(error)

@@ -15,29 +15,31 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
     let manager = CLLocationManager()
     
     var compeletion: ((CLLocation)-> Void)?
-    var statue: CLAuthorizationStatus?
+//    var statue: CLAuthorizationStatus?
     
+
     func getUserLocation(compeletion: @escaping ((CLLocation)-> Void)){
         
         manager.requestWhenInUseAuthorization()
         manager.delegate = self
         manager.startUpdatingLocation()
-        statue = manager.authorizationStatus
-        switch manager.authorizationStatus {
-        case .notDetermined:
-            self.compeletion = nil
-        case .restricted:
-            self.compeletion = nil
-        case .denied:
-            self.compeletion = nil
-        case .authorizedAlways:
-            self.compeletion = compeletion
-        case .authorizedWhenInUse:
-            self.compeletion = compeletion
-        @unknown default:
-            self.compeletion = nil
-        }
-        
+        self.compeletion = compeletion
+//        statue = manager.authorizationStatus
+//        switch manager.authorizationStatus {
+//        case .notDetermined:
+//            self.compeletion = nil
+//        case .restricted:
+//            self.compeletion = nil
+//        case .denied:
+//            self.compeletion = nil
+//        case .authorizedAlways:
+//            self.compeletion = compeletion
+//        case .authorizedWhenInUse:
+//            self.compeletion = compeletion
+//        @unknown default:
+//            self.compeletion = nil
+//        }
+//
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

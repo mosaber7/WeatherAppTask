@@ -18,22 +18,25 @@ protocol HomeViewProtocol: AnyObject, NavigationRoute {
 //MARK: HomeViewController
 
 class HomeViewController: UIViewController, HomeViewProtocol {
-   
+    
     var presenter: HomePresenterProtocol?
-   
-
+    
+    
     @IBOutlet weak var homeSearchBar: UISearchBar!
     @IBOutlet weak var homeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         homeSearchBar.delegate = self
         title = "Home"
+        
         DispatchQueue.main.async {
             self.presenter?.presenterDidLoad()
         }
+        
         registerCell()
-            }
+    }
     
     func reloadData() {
         homeTableView.reloadData()
@@ -47,21 +50,19 @@ extension HomeViewController{
         let cityCell = UINib(nibName: "CityCell", bundle: nil)
         homeTableView.register(cityCell, forCellReuseIdentifier: "CityCell")
     }
-   
-    
 }
 
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presenter?.selectedCity(at: indexPath)
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             self.presenter?.removeCity(at: indexPath)
             homeTableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
 }
@@ -88,7 +89,7 @@ extension HomeViewController: UISearchBarDelegate{
         searchBar.endEditing(true)
         presenter?.searchBarClicked()
     }
- 
+    
 }
 
 

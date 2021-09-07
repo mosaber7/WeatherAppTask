@@ -55,7 +55,7 @@ class SearchPresenter: SearchPresenterProtocol {
         cell.configureCell(cityName: filteredCities[indexPath.row].name)
     }
     func selectCity(at index: IndexPath) {
-        let selectedCity = cities[index.row]
+        let selectedCity = filteredCities[index.row]
         let detailsRoute = SearchNavigationRoutes.Details(selectedCity, homePresenter)
         searchView?.navigate(to: detailsRoute)
     }
