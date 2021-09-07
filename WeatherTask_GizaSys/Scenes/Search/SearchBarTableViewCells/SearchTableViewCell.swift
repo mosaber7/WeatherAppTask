@@ -24,19 +24,16 @@ class SearchTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-       
     }
     
 }
 
-// MARK: -
-
+// MARK: - SearchCellViewProtocol
 extension SearchTableViewCell: SearchCellViewProtocol{
+    
     func configureCell(cityName: String) {
         nameLabel.text = cityName
     }
-    
     
 }
 

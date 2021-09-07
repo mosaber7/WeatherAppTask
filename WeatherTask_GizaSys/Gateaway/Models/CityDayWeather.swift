@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 //{
 //   "coord":{
 //      "lon":31.2497,
@@ -84,16 +85,18 @@ struct Wind: Codable {
     let deg: Int
 }
 
-struct CityViewModel{
-    var name: String
-    var windSpeed: Double
-    var temp: Double
-    var weatherDescription: String
+
+class CityViewModel{
+    var  name: String?
+     var windSpeed: String?
+     var temp: String?
+     var weatherDescription: String?
     
     init(city: CityDayWeather){
+        
         self.name = city.name
-        self.windSpeed = city.wind.speed
-        self.temp = city.main.temp
+        self.windSpeed = "\(city.wind.speed)"
+        self.temp = "\(city.main.temp)"
         self.weatherDescription = city.weather[0].weatherDescription
         
     }

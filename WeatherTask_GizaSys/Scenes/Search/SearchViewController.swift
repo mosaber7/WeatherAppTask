@@ -16,7 +16,7 @@ protocol SearchViewProtocol: AnyObject, NavigationRoute {
 
 
 // MARK: - Search View VC
-class SearchViewController: UIViewController, SearchViewProtocol {
+class SearchViewController: UIViewController  {
     
     @IBOutlet private weak var citiesSearchBar: UISearchBar!
     @IBOutlet private weak var resultsTableView: UITableView!
@@ -31,13 +31,18 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         // Do any additional setup after loading the view.
     }
     
+   
+      
+}
+// MARK: - Search View Protocol
+
+extension SearchViewController: SearchViewProtocol{
     func showTablView() {
         resultsTableView.isHidden = false
     }
     func reloadData() {
         resultsTableView.reloadData()
     }
-      
 }
 
 // MARK: - Search Bar TableView setup

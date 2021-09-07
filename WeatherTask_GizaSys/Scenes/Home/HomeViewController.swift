@@ -17,7 +17,7 @@ protocol HomeViewProtocol: AnyObject, NavigationRoute {
 
 //MARK: HomeViewController
 
-class HomeViewController: UIViewController, HomeViewProtocol {
+class HomeViewController: UIViewController {
     
     var presenter: HomePresenterProtocol?
     
@@ -30,26 +30,23 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         
         homeSearchBar.delegate = self
         title = "Home"
-        
-        DispatchQueue.main.async {
-            self.presenter?.presenterDidLoad()
-        }
-        
+        self.presenter?.presenterDidLoad()
         registerCell()
     }
     
-    func reloadData() {
-        homeTableView.reloadData()
-    }
-    
-}
-
-// MARK: - Private functions
-extension HomeViewController{
     private func registerCell(){
         homeTableView.registerNib(cell: CityCell.self)
     }
 }
+
+
+// MARK: - HomeViewProtocol
+extension HomeViewController: HomeViewProtocol{
+    func reloadData() {
+        homeTableView.reloadData()
+    }
+}
+
 
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate{

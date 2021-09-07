@@ -15,7 +15,7 @@ protocol DetailsViewProtocol: AnyObject {
     func reloadData()
 }
 
-class DetailsViewController: UIViewController, DetailsViewProtocol {
+class DetailsViewController: UIViewController {
     
     @IBOutlet private weak var daysTableView: UITableView!
     @IBOutlet private weak var addToFavoriteButton: UIButton!
@@ -24,30 +24,28 @@ class DetailsViewController: UIViewController, DetailsViewProtocol {
         title = self.presenter?.title
         super.viewDidLoad()
         addToFavoriteButton.layer.cornerRadius = addToFavoriteButton.frame.height/2
-        DispatchQueue.main.async {
-            self.presenter?.viewDidLoad()
-        }
+        self.presenter?.viewDidLoad()
         registerCell()
         
     }
     
-    @IBAction func addToFavoriteClicked(_ sender: Any) {
+    @IBAction private func addToFavoriteClicked(_ sender: Any) {
         self.presenter?.addToFavorite()
     }
+    
+    private func registerCell(){
+        daysTableView.registerNib(cell: DayCell.self)
+    }
+    
+}
+
+//MARK: - DetailsViewProtocol
+extension DetailsViewController: DetailsViewProtocol{
     func hideAddButton() {
         addToFavoriteButton.isHidden = true
     }
     func reloadData() {
         self.daysTableView.reloadData()
-    }
-    
-    
-}
-//MARK: - Helper Methods
-extension DetailsViewController{
-    private func registerCell(){
-        
-        daysTableView.registerNib(cell: DayCell.self)
     }
 }
 
@@ -62,6 +60,4 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource{
         self.presenter?.configureCell(cell: cell, at: indexPath)
         return cell
     }
-    
-    
 }

@@ -35,7 +35,7 @@ protocol HomeDetailsDelegate: AnyObject{
 }
 
 //MARK: - Home Presenter class
-class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
+class HomePresenter {
     
     var numberOfRows: Int{
         return favoriteCities.count
@@ -53,7 +53,11 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
-    
+
+}
+
+//MARK: - Home presenter
+extension HomePresenter: HomePresenterProtocol{
     func presenterDidLoad() {
         self.interactor.getCitiesDayWeather()
         self.interactor.getUserLocation { (cityName) in
@@ -66,27 +70,6 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
         }
     }
     
-    func CityDayDataFetchedSuccessfully(cityDayWeather: CityDayWeather) {
-        for _ in 0..<5{
-            self.cities.append(cityDayWeather)
-        }
-        print("Data fetiched successfully")
-    }
-    
-    func dataFetchingFailed(with error: Error) {
-        fatalError("Failed to fetch Data")
-    }
-    
-    func currentCityLocationFetchedSuccessfuly(cityDayWeather: CityDayWeather){
-        self.favoriteCities.append(cityDayWeather)
-        self.cities.append(cityDayWeather)
-        self.view?.reloadData()
-    }
-    
-    func currentCityLocationFetchedWithError(error: Error){
-        // defult current city set as Lodon
-        print("error")
-    }
     
     func selectedCity(at index: IndexPath) {
         guard favoriteCities.count > 0 else{return}
@@ -137,4 +120,30 @@ extension HomePresenter: HomeDetailsDelegate{
         return false
     }
     
+}
+// MARK: - Home Interactor Output Protocol
+
+extension HomePresenter: HomeInteractorOutputProtocol{
+    
+    func CityDayDataFetchedSuccessfully(cityDayWeather: CityDayWeather) {
+        for _ in 0..<5{
+            self.cities.append(cityDayWeather)
+        }
+        print("Data fetiched successfully")
+    }
+    
+    func dataFetchingFailed(with error: Error) {
+        fatalError("Failed to fetch Data")
+    }
+    
+    func currentCityLocationFetchedSuccessfuly(cityDayWeather: CityDayWeather){
+        self.favoriteCities.append(cityDayWeather)
+        self.cities.append(cityDayWeather)
+        self.view?.reloadData()
+    }
+    
+    func currentCityLocationFetchedWithError(error: Error){
+        // defult current city set as Lodon
+        print("error")
+    }
 }

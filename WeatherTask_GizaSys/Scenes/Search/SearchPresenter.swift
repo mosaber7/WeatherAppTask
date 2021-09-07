@@ -17,7 +17,7 @@ protocol SearchPresenterProtocol {
 
 
 
-class SearchPresenter: SearchPresenterProtocol {
+class SearchPresenter {
     
     
     var cities: [CityDayWeather]
@@ -27,11 +27,25 @@ class SearchPresenter: SearchPresenterProtocol {
     var rowsCount: Int {
         return filteredCities.count
     }
+    
+    
+    init(view: SearchViewProtocol, cities: [CityDayWeather], homePresenter: HomeDetailsDelegate) {
+        self.searchView = view
+        self.cities = cities
+        self.homePresenter = homePresenter
+        
+    }
+    
+    
+}
+
+// MARK: - SearchPresenterProtocol
+extension SearchPresenter: SearchPresenterProtocol{
     func textDidChange(searchText: String) {
         searchView?.showTablView()
         filteredCities = []
         if searchText == ""{
-        filteredCities = cities
+            filteredCities = cities
             
         }else{
             for city in cities{
@@ -41,14 +55,6 @@ class SearchPresenter: SearchPresenterProtocol {
             }
             self.searchView?.reloadData()
         }
-        
-    }
-    
-    init(view: SearchViewProtocol, cities: [CityDayWeather], homePresenter: HomeDetailsDelegate) {
-        self.searchView = view
-        self.cities = cities
-        self.homePresenter = homePresenter
-        
     }
     
     func configureCell(cell: SearchCellViewProtocol, indexPath: IndexPath) {

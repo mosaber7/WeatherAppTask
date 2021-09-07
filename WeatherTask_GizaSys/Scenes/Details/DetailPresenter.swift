@@ -16,6 +16,7 @@ protocol DetailPresenterProtocol {
     func viewDidLoad()
     func configureCell(cell: DayCellViewProtocol ,at index: IndexPath)
 }
+
 protocol DetailsPresenterInteractorProtocol: AnyObject {
     func cityWeekDataFetchedSuccessfully(weekWeather: [CityWeekWeather])
     func dataFetchingFailed(with error: Error)
@@ -38,12 +39,10 @@ class DetailsPresenter{
     }
    
 }
-//MARK: - confirmin to DetailPresenterProtocol protocol
 
+//MARK: - confirmin to DetailPresenterProtocol protocol
 extension DetailsPresenter: DetailPresenterProtocol, DetailsPresenterInteractorProtocol{
     
-    
-   
     
     var numberOfRows: Int{
         return 5

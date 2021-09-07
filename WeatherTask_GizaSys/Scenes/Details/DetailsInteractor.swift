@@ -16,6 +16,7 @@ protocol DetailsInteractorProtocol {
 }
 
 class DetailsInteractor: DetailsInteractorProtocol {
+    
     var presenter: DetailsPresenterInteractorProtocol?
     private let request = cityRequest()
     

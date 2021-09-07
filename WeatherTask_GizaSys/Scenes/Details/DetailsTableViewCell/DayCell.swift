@@ -32,6 +32,7 @@ class DayCell: UITableViewCell {
 //MARK: - confirming to DayCellViewProtocol
 
 extension DayCell: DayCellViewProtocol{
+    
     func configCell(cityDayWeather: CityWeekWeather) {
         dayLabel.text = cityDayWeather.date
         windLabel.text = "\(cityDayWeather.wind.speed)"
