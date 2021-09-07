@@ -62,7 +62,6 @@ extension HomePresenter: HomePresenterProtocol{
         self.interactor.getCitiesDayWeather()
         self.interactor.getUserLocation { (cityName) in
             guard let cityName = cityName else{
-                self.interactor.getCurrentCityDayWeather(cityName: "London")
                 return
             }
             self.interactor.getCurrentCityDayWeather(cityName: cityName)

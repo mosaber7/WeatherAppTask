@@ -14,32 +14,16 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
     
     let manager = CLLocationManager()
     
-    var compeletion: ((CLLocation)-> Void)?
-//    var statue: CLAuthorizationStatus?
+    var compeletion: ((CLLocation?)-> Void)?
     
 
-    func getUserLocation(compeletion: @escaping ((CLLocation)-> Void)){
+    func getUserLocation(compeletion: @escaping ((CLLocation?)-> Void)){
         
         manager.requestWhenInUseAuthorization()
         manager.delegate = self
         manager.startUpdatingLocation()
-        self.compeletion = compeletion
-//        statue = manager.authorizationStatus
-//        switch manager.authorizationStatus {
-//        case .notDetermined:
-//            self.compeletion = nil
-//        case .restricted:
-//            self.compeletion = nil
-//        case .denied:
-//            self.compeletion = nil
-//        case .authorizedAlways:
-//            self.compeletion = compeletion
-//        case .authorizedWhenInUse:
-//            self.compeletion = compeletion
-//        @unknown default:
-//            self.compeletion = nil
-//        }
-//
+       self.compeletion = compeletion
+
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -50,6 +34,12 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
         compeletion?(location)
         manager.stopUpdatingLocation()
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+        compeletion?(nil)
+    }
+    
     func resolveLocationName(with location: CLLocation, compeletion: @escaping ((String?)-> Void)){
         
         let geoCoder = CLGeocoder()
@@ -68,6 +58,25 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
         
         LocationManager.shared.getUserLocation { (location) in
             
+            
+            guard let location = location else{
+                switch self.manager.authorizationStatus{
+                
+                case .notDetermined:
+                    completion(nil)
+                case .restricted:
+                    completion("London")
+                case .denied:
+                    completion("London")
+                case .authorizedAlways:
+                    break
+                case .authorizedWhenInUse:
+                    break
+                @unknown default:
+                    break
+                }
+                return
+            }
             self.helper(with: location) { (locationName) in
                 completion(locationName)
 
