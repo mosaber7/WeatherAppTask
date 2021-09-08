@@ -31,7 +31,10 @@ class SearchViewController: UIViewController  {
         // Do any additional setup after loading the view.
     }
     
-   
+    private func registerCell(){
+    
+        resultsTableView.registerNib(cell: SearchTableViewCell.self)
+    }
       
 }
 // MARK: - Search View Protocol
@@ -74,14 +77,9 @@ extension SearchViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchPresenter?.textDidChange(searchText: searchText)
     }
-}
-
-// MARK: - Private Helper Methods
-
-extension SearchViewController{
-    private func registerCell(){
-        
-        resultsTableView.registerNib(cell: SearchTableViewCell.self)
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        true
     }
-    
 }
+
+

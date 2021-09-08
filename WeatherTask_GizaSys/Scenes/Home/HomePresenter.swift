@@ -125,9 +125,8 @@ extension HomePresenter: HomeDetailsDelegate{
 extension HomePresenter: HomeInteractorOutputProtocol{
     
     func CityDayDataFetchedSuccessfully(cityDayWeather: CityDayWeather) {
-        for _ in 0..<5{
+
             self.cities.append(cityDayWeather)
-        }
         print("Data fetiched successfully")
     }
     
@@ -137,7 +136,9 @@ extension HomePresenter: HomeInteractorOutputProtocol{
     
     func currentCityLocationFetchedSuccessfuly(cityDayWeather: CityDayWeather){
         self.favoriteCities.append(cityDayWeather)
-        self.cities.append(cityDayWeather)
+        if !cities.contains(cityDayWeather){
+            self.cities.append(cityDayWeather)
+        }
         self.view?.reloadData()
     }
     

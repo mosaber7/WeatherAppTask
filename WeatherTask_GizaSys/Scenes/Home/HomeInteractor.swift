@@ -23,7 +23,9 @@ class HomeInteractor: HomeInteractorInputProtocol{
     private let request = cityRequest()
     
     func getCitiesDayWeather(){
-        request.retrieveCityDayWeather(cityName: "Cairo") { [weak self] (result) in
+        let randomCitiies = ["Cairo", "Tokyo", "Kansas", "Luxor", "Giza"]
+        for city in randomCitiies{
+        request.retrieveCityDayWeather(cityName: city) { [weak self] (result) in
             switch result{
             
             case .success(let city):
@@ -32,6 +34,7 @@ class HomeInteractor: HomeInteractorInputProtocol{
                 self?.presenter?.dataFetchingFailed(with: error)
             }
             
+        }
         }
         
     }
