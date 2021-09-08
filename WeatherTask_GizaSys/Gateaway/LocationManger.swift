@@ -64,7 +64,8 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
                 switch self.manager.authorizationStatus{
                 
                 case .notDetermined:
-                    completion(nil)
+                    print("here")
+                    fallthrough
                 case .restricted:
                     completion(nil)
                 case .denied:
