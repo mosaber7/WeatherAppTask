@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: - CityCellViewProtocol
 protocol  CityCellViewProtocol {
-    func configure(cityViewModel: CityViewModel)
+    func configure(cityViewModel: CityDayWeather)
     func hideIndicator()
     func startIndicator()
 }
@@ -34,11 +34,11 @@ class CityCell: UITableViewCell {
 }
 
 extension CityCell: CityCellViewProtocol{
-    func configure(cityViewModel: CityViewModel) {
+    func configure(cityViewModel: CityDayWeather) {
         cityNameLabel.text = cityViewModel.name
-        tempLabel.text = "\(cityViewModel.temp)"
-        windSpeedLabel.text = "\(cityViewModel.windSpeed)"
-        weatherConditionLabel.text = cityViewModel.weatherDescription
+        tempLabel.text = "\(cityViewModel.main.temp)"
+        windSpeedLabel.text = "\(cityViewModel.wind.speed)"
+        weatherConditionLabel.text = "\(cityViewModel.weather)"
     }
     func hideIndicator() {
         self.loadingIndicator.stopAnimating()

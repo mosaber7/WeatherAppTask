@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol SearchPresenterProtocol {
     var searchView: SearchViewProtocol?{get set}
@@ -35,6 +36,7 @@ class SearchPresenter {
         self.homePresenter = homePresenter
         
     }
+    
     
     
 }

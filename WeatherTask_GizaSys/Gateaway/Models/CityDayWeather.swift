@@ -50,61 +50,131 @@ import CoreData
 //   "name":"Cairo",
 //   "cod":200
 //}
+//
 
-struct CityDayWeather: Codable {
-    let weather: [Weather]
-    let main: Main
-    let wind: Wind
-    let name: String
 
+import Foundation
+import CoreData
+
+enum DecoderConfigurationError: Error {
+    case missingManagedObjectContext
 }
-// MARK: - Main
-struct Main: Codable {
-    let temp: Double
-    let pressure, humidity: Int
 
-    enum CodingKeys: String, CodingKey {
-        case temp
-        case pressure, humidity
+class CityDayWeather: NSManagedObject, Codable {
+    @NSManaged var weather: Set<Weather>
+    @NSManaged var main: Main
+    @NSManaged var wind: Wind
+    @NSManaged var name: String
+
+    enum CodingKeys: String, CodingKey{
+        case weather, main, wind, name
+    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
+            throw DecoderConfigurationError.missingManagedObjectContext
+        }
+        
+        self.init(context: context)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.weather = try container.decode(Set<Weather>.self, forKey: .weather)
+        self.main = try container.decode(Main.self, forKey: .main)
+        self.wind = try container.decode(Wind.self, forKey: .wind)
+        self.name = try container.decode(String.self, forKey: .name)
+        
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(weather, forKey: .weather)
+        try container.encode(wind, forKey: .wind)
+        try container.encode(main, forKey: .main)
+        try container.encode(name, forKey: .name)
+    }
+    
+}
+
+class Main:NSManagedObject, Codable {
+    @NSManaged var temp: Double
+    @NSManaged var pressure: Int
+    @NSManaged var humidity: Int
+
+    enum CodingKeys: String, CodingKey{
+        case temp, pressure, humidity
+    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
+            throw DecoderConfigurationError.missingManagedObjectContext
+        }
+        
+        self.init(context: context)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.temp = try container.decode(Double.self, forKey: .temp)
+        self.pressure = try container.decode(Int.self, forKey: .pressure)
+        self.humidity = try container.decode(Int.self, forKey: .humidity)
+        
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(temp, forKey: .temp)
+        try container.encode(pressure, forKey: .pressure)
+        try container.encode(humidity, forKey: .humidity)
     }
 }
 
-
-// MARK: - Weather
-struct Weather: Codable {
-    let weatherDescription: String
-
-    enum CodingKeys: String, CodingKey {
+class Weather:NSManagedObject, Codable {
+    @NSManaged var weatherDescription: String
+    
+    enum CodingKeys: String, CodingKey{
         case weatherDescription = "description"
     }
-}
-
-// MARK: - Wind
-struct Wind: Codable {
-    let speed: Double
-    let deg: Int
-}
-
-
-class CityViewModel{
-    let  name: String
-     let windSpeed: String
-     let temp: String
-     let weatherDescription: String
     
-    init(city: CityDayWeather){
+    required convenience init(from decoder: Decoder) throws {
+        guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
+            throw DecoderConfigurationError.missingManagedObjectContext
+        }
         
-        self.name = city.name
-        self.windSpeed = "\(city.wind.speed)"
-        self.temp = "\(city.main.temp)"
-        self.weatherDescription = city.weather[0].weatherDescription
+        self.init(context: context)
         
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.weatherDescription = try container.decode(String.self, forKey: .weatherDescription)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(weatherDescription, forKey: .weatherDescription)
     }
 }
 
-extension CityDayWeather: Equatable{
-    static func == (lhs: CityDayWeather, rhs: CityDayWeather) -> Bool {
-        lhs.name == rhs.name
+class Wind:NSManagedObject, Codable {
+    @NSManaged var speed: Double
+    @NSManaged var deg: Int
+
+    enum CodingKeys: String, CodingKey{
+        case speed, deg
+    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
+            throw DecoderConfigurationError.missingManagedObjectContext
+        }
+        
+        self.init(context: context)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.speed = try container.decode(Double.self, forKey: .speed)
+        self.deg = try container.decode(Int.self, forKey: .deg)
+
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(speed, forKey: .speed)
+        try container.encode(deg, forKey: .deg)
     }
 }
-    
+

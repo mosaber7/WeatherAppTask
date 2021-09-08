@@ -26,7 +26,6 @@ class HomeInteractorTests: XCTestCase {
     }
     func getCurrentCityDayWeather_Test(){
         sut.getCurrentCityDayWeather(cityName: "Cairo")
-        XCTAssert(mockOutput.)
     }
   
 

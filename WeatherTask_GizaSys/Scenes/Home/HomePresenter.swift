@@ -84,8 +84,7 @@ extension HomePresenter: HomePresenterProtocol{
             return
         }
         let city = favoriteCities[index.row]
-        let model = CityViewModel(city: city)
-        cell.configure(cityViewModel: model)
+        cell.configure(cityViewModel: city)
     }
     
     func searchBarClicked() {
@@ -133,7 +132,8 @@ extension HomePresenter: HomeInteractorOutputProtocol{
     }
     
     func dataFetchingFailed(with error: Error) {
-        fatalError("Failed to fetch Data")
+    
+        fatalError("Failed to fetch Data error: \(error)")
     }
     
     func currentCityLocationFetchedSuccessfuly(cityDayWeather: CityDayWeather){

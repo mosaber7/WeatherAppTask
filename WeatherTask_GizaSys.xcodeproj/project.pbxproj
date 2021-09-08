@@ -21,6 +21,8 @@
 		0599A06926DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0599A06726DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld */; };
 		0599A06B26DFF8490006E48B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0599A06A26DFF8490006E48B /* Assets.xcassets */; };
 		0599A06E26DFF8490006E48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0599A06C26DFF8490006E48B /* LaunchScreen.storyboard */; };
+		05AD47C926E8ED570023FD7A /* CodingUserInfoKeys+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AD47C826E8ED570023FD7A /* CodingUserInfoKeys+Extension.swift */; };
+		05AD47CF26E8F35E0023FD7A /* coreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AD47CE26E8F35E0023FD7A /* coreDataManager.swift */; };
 		05AEAC4626E2B5BF00CB282A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AEAC4526E2B5BF00CB282A /* Route.swift */; };
 		05AEAC4926E2B68B00CB282A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AEAC4826E2B68B00CB282A /* UIViewController+Extension.swift */; };
 		05AEAC4C26E2B81A00CB282A /* HomeNavigationRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AEAC4B26E2B81A00CB282A /* HomeNavigationRoutes.swift */; };
@@ -81,6 +83,8 @@
 		0599A06A26DFF8490006E48B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0599A06D26DFF8490006E48B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0599A06F26DFF8490006E48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05AD47C826E8ED570023FD7A /* CodingUserInfoKeys+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKeys+Extension.swift"; sourceTree = "<group>"; };
+		05AD47CE26E8F35E0023FD7A /* coreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataManager.swift; sourceTree = "<group>"; };
 		05AEAC4526E2B5BF00CB282A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		05AEAC4826E2B68B00CB282A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		05AEAC4B26E2B81A00CB282A /* HomeNavigationRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationRoutes.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				052C0DDB26E503D000B2BF8E /* LocationManger.swift */,
 				05ED678726E62ACE00D0C8F9 /* dataStore.swift */,
 				05ED678A26E62AFC00D0C8F9 /* cuDataStore.swift */,
+				05AD47CE26E8F35E0023FD7A /* coreDataManager.swift */,
 			);
 			path = Gateaway;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			children = (
 				05F510BF26E7D1CF0073585D /* TableView */,
 				05AEAC4426E2B4F800CB282A /* NavigationRoute */,
+				05AD47C826E8ED570023FD7A /* CodingUserInfoKeys+Extension.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 			files = (
 				05AEAC4926E2B68B00CB282A /* UIViewController+Extension.swift in Sources */,
 				0574D86626E3F6C6009CE02A /* SearchNavigationRoutes.swift in Sources */,
+				05AD47CF26E8F35E0023FD7A /* coreDataManager.swift in Sources */,
 				0599A06926DFF8480006E48B /* WeatherTask_GizaSys.xcdatamodeld in Sources */,
 				05B525FA26E1018C001385C4 /* HomeRouter.swift in Sources */,
 				0599A06326DFF8480006E48B /* HomeViewController.swift in Sources */,
@@ -517,6 +524,7 @@
 				0574D85426E3AFFB009CE02A /* SearchViewController.swift in Sources */,
 				0574D86926E3FA4F009CE02A /* SearchRouter.swift in Sources */,
 				05ED678426E5EA5700D0C8F9 /* CityWeekWeatherContainer.swift in Sources */,
+				05AD47C926E8ED570023FD7A /* CodingUserInfoKeys+Extension.swift in Sources */,
 				05ED678B26E62AFC00D0C8F9 /* cuDataStore.swift in Sources */,
 				05ED750E26E2745E00281A7A /* DetailPresenter.swift in Sources */,
 				05AEAC4626E2B5BF00CB282A /* Route.swift in Sources */,
