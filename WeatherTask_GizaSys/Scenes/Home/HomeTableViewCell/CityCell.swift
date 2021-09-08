@@ -10,6 +10,8 @@ import UIKit
 //MARK: - CityCellViewProtocol
 protocol  CityCellViewProtocol {
     func configure(cityViewModel: CityViewModel)
+    func hideIndicator()
+    func startIndicator()
 }
 
 //MARK: - CityCell
@@ -18,6 +20,7 @@ class CityCell: UITableViewCell {
     @IBOutlet private weak var tempLabel: UILabel!
     @IBOutlet private weak var windSpeedLabel: UILabel!
     @IBOutlet private weak var weatherConditionLabel: UILabel!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +40,14 @@ extension CityCell: CityCellViewProtocol{
         windSpeedLabel.text = "\(cityViewModel.windSpeed)"
         weatherConditionLabel.text = cityViewModel.weatherDescription
     }
+    func hideIndicator() {
+        self.loadingIndicator.stopAnimating()
+        self.loadingIndicator.isHidden = true
+    }
     
+    func startIndicator() {
+        self.loadingIndicator.isHidden = true
+        self.loadingIndicator.stopAnimating()
+    }
     
 }
