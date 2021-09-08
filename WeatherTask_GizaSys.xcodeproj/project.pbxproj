@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		052C0DDC26E503D000B2BF8E /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C0DDB26E503D000B2BF8E /* LocationManger.swift */; };
+		053491C126E9190E008B3817 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053491C026E9190E008B3817 /* Stubs.swift */; };
+		053491C826E91DFA008B3817 /* SearchSceneStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053491C726E91DFA008B3817 /* SearchSceneStubs.swift */; };
 		0574D84D26E38F8D009CE02A /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D84B26E38F8D009CE02A /* DayCell.swift */; };
 		0574D84E26E38F8D009CE02A /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0574D84C26E38F8D009CE02A /* DayCell.xib */; };
 		0574D85426E3AFFB009CE02A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574D85326E3AFFB009CE02A /* SearchViewController.swift */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		052C0DDB26E503D000B2BF8E /* LocationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
+		053491C026E9190E008B3817 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		053491C726E91DFA008B3817 /* SearchSceneStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneStubs.swift; sourceTree = "<group>"; };
 		0574D84B26E38F8D009CE02A /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		0574D84C26E38F8D009CE02A /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
 		0574D85326E3AFFB009CE02A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053491BF26E918E9008B3817 /* MockHelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				053491C026E9190E008B3817 /* Stubs.swift */,
+			);
+			path = MockHelperClasses;
+			sourceTree = "<group>";
+		};
 		0574D85226E3AFB4009CE02A /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +305,7 @@
 		05D31F6A26E826550052B59B /* HomeSceneTests */ = {
 			isa = PBXGroup;
 			children = (
+				053491BF26E918E9008B3817 /* MockHelperClasses */,
 				05D31F5426E825710052B59B /* WeatherTask_GizaSysTests.swift */,
 				05D31F5E26E826090052B59B /* HomePresenterTests.swift */,
 				05D31F6226E826310052B59B /* HomeRouterTests.swift */,
@@ -307,6 +320,7 @@
 				05D31F6C26E826B60052B59B /* SearchPresenterTests.swift */,
 				05D31F7226E826C90052B59B /* SearchInteractorTests.swift */,
 				05D31F7626E826DE0052B59B /* SearchRouterTests.swift */,
+				053491C726E91DFA008B3817 /* SearchSceneStubs.swift */,
 			);
 			path = SearchSceneTests;
 			sourceTree = "<group>";
@@ -543,9 +557,11 @@
 				05D31F7326E826C90052B59B /* SearchInteractorTests.swift in Sources */,
 				05D31F6326E826310052B59B /* HomeRouterTests.swift in Sources */,
 				05D31F5F26E826090052B59B /* HomePresenterTests.swift in Sources */,
+				053491C826E91DFA008B3817 /* SearchSceneStubs.swift in Sources */,
 				05D31F6726E8264D0052B59B /* HomeInteractorTests.swift in Sources */,
 				05D31F7726E826DE0052B59B /* SearchRouterTests.swift in Sources */,
 				05D31F7C26E827030052B59B /* DetailsPresenterTests.swift in Sources */,
+				053491C126E9190E008B3817 /* Stubs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

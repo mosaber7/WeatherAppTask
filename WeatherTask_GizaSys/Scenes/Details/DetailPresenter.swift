@@ -25,12 +25,12 @@ protocol DetailsPresenterInteractorProtocol: AnyObject {
 class DetailsPresenter{
     
     private var city: CityDayWeather
-    private var cityWeekWeather = [CityWeekWeather]()
+    private (set) var cityWeekWeather = [CityWeekWeather]()
     weak var view: DetailsViewProtocol?
     weak var homePresenter: HomeDetailsDelegate?
-    private let interactor: DetailsInteractor
+    private let interactor: DetailsInteractorProtocol
     
-    init(view: DetailsViewProtocol, city: CityDayWeather, homePresenter: HomeDetailsDelegate, interactor: DetailsInteractor) {
+    init(view: DetailsViewProtocol, city: CityDayWeather, homePresenter: HomeDetailsDelegate, interactor: DetailsInteractorProtocol) {
         self.view = view
         self.city = city
         self.interactor = interactor

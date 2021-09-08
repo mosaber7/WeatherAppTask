@@ -21,9 +21,10 @@ class SearchPresenter {
     
     
     var cities: [CityDayWeather]
-    private var filteredCities = [CityDayWeather]()
+    private (set) var filteredCities = [CityDayWeather]()
     weak var searchView: SearchViewProtocol?
     var homePresenter: HomeDetailsDelegate!
+    
     var rowsCount: Int {
         return filteredCities.count
     }
