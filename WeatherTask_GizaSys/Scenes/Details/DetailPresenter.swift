@@ -74,7 +74,7 @@ extension DetailsPresenter: DetailPresenterProtocol, DetailsPresenterInteractorP
     }
     
     func dataFetchingFailed(with error: Error) {
-        fatalError("Failed to fetch Data")
+        fatalError("Failed to fetch Data \(error)")
     }
     
     func configureCell(cell: DayCellViewProtocol, at index: IndexPath) {
