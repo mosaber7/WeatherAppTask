@@ -23,7 +23,7 @@ class HomeInteractor: HomeInteractorInputProtocol{
     private let request = cityRequest()
     
     func getCitiesDayWeather(){
-        let randomCitiies = ["Cairo", "Tokyo", "Kansas", "Luxor", "Giza"]
+        let randomCitiies = ["Cairo", "Tokyo", "Kansas", "Luxor", "Giza", "Moscow"]
         for city in randomCitiies{
         request.retrieveCityDayWeather(cityName: city) { [weak self] (result) in
             switch result{

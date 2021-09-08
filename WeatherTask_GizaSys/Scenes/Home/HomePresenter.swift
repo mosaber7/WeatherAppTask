@@ -62,6 +62,8 @@ extension HomePresenter: HomePresenterProtocol{
         self.interactor.getCitiesDayWeather()
         self.interactor.getUserLocation { (cityName) in
             guard let cityName = cityName else{
+                self.interactor.getCurrentCityDayWeather(cityName: "London")
+                self.view?.reloadData()
                 return
             }
             self.interactor.getCurrentCityDayWeather(cityName: cityName)
@@ -135,7 +137,12 @@ extension HomePresenter: HomeInteractorOutputProtocol{
     }
     
     func currentCityLocationFetchedSuccessfuly(cityDayWeather: CityDayWeather){
-        self.favoriteCities.append(cityDayWeather)
+        guard !favoriteCities.isEmpty else {
+            self.favoriteCities.append(cityDayWeather)
+            self.view?.reloadData()
+            return
+        }
+        self.favoriteCities[0] = cityDayWeather
         if !cities.contains(cityDayWeather){
             self.cities.append(cityDayWeather)
         }

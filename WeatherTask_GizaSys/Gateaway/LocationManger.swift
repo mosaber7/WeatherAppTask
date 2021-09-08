@@ -66,9 +66,9 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
                 case .notDetermined:
                     completion(nil)
                 case .restricted:
-                    completion("London")
+                    completion(nil)
                 case .denied:
-                    completion("London")
+                    completion(nil)
                 case .authorizedAlways:
                     break
                 case .authorizedWhenInUse:
@@ -79,7 +79,7 @@ class LocationManager:NSObject, CLLocationManagerDelegate{
                 return
             }
             self.helper(with: location) { (locationName) in
-                completion(locationName)
+                completion(locationName!)
 
             }
             
