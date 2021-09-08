@@ -6,11 +6,21 @@
 //
 
 import XCTest
+@testable import WeatherTask_GizaSys
 
 class HomePresenterTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var sut: HomePresenter!
+    var view: HomeViewProtocol!
+    var interactor: HomeInteractorInputProtocol!
+    var router: HomeRouterProtocol!
+    
+    override func setUp()  {
+         super.setUp()
+        view = HomeRouter.createHomeModule() as! HomeViewProtocol
+        interactor = HomeInteractor()
+        router = HomeRouter()
+        sut = HomePresenter(view: view, interactor: interactor, router: router)
     }
 
     override func tearDownWithError() throws {

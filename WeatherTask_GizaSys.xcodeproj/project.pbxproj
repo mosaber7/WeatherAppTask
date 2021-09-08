@@ -282,9 +282,9 @@
 		05D31F5326E825710052B59B /* WeatherTask_GizaSysTests */ = {
 			isa = PBXGroup;
 			children = (
-				05D31F7A26E826EA0052B59B /* DetailsSceneTests */,
-				05D31F6B26E826790052B59B /* SearchSceneTests */,
 				05D31F6A26E826550052B59B /* HomeSceneTests */,
+				05D31F6B26E826790052B59B /* SearchSceneTests */,
+				05D31F7A26E826EA0052B59B /* DetailsSceneTests */,
 				05D31F5626E825710052B59B /* Info.plist */,
 			);
 			path = WeatherTask_GizaSysTests;
