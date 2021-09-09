@@ -45,7 +45,7 @@ struct CityWeekWeather: Codable {
 
 // MARK: - Week Weather
 struct WeekWeather: Codable {
-    let weatherDescription: Description
+    let weatherDescription: String
 
     enum CodingKeys: String, CodingKey {
         case weatherDescription = "description"
@@ -59,13 +59,6 @@ struct MainClass: Codable {
 
 
 
-enum Description: String, Codable {
-    case clearSky = "clear sky"
-    case fewClouds = "few clouds"
-    case scatteredClouds = "scattered clouds"
-    case brokenClouds = "broken clouds"
-        case lightRain = "light rain"
-        case overcastClouds = "overcast clouds"
-}
+
 
 

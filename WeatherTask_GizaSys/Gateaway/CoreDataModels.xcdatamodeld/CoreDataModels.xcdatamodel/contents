@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20C5061b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CityDayWeather" representedClassName="CityDayWeather" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="main" maxCount="1" deletionRule="No Action" destinationEntity="Main"/>
+        <relationship name="weather" toMany="YES" deletionRule="No Action" destinationEntity="Weather"/>
+        <relationship name="wind" maxCount="1" deletionRule="No Action" destinationEntity="Wind"/>
+    </entity>
+    <entity name="Main" representedClassName="Main" syncable="YES">
+        <attribute name="humidity" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pressure" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Weather" representedClassName="Weather" syncable="YES">
+        <attribute name="weatherDescription" attributeType="String"/>
+    </entity>
+    <entity name="Wind" representedClassName="Wind" syncable="YES">
+        <attribute name="deg" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="speed" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Main" positionX="-9" positionY="36" width="128" height="74"/>
+        <element name="Weather" positionX="-9" positionY="36" width="128" height="44"/>
+        <element name="CityDayWeather" positionX="0" positionY="45" width="128" height="89"/>
+        <element name="Wind" positionX="18" positionY="63" width="128" height="59"/>
+    </elements>
+</model>

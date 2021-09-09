@@ -60,6 +60,7 @@ enum DecoderConfigurationError: Error {
     case missingManagedObjectContext
 }
 
+@objc(CityDayWeather)
 class CityDayWeather: NSManagedObject, Codable {
     @NSManaged var weather: Set<Weather>
     @NSManaged var main: Main
@@ -95,6 +96,7 @@ class CityDayWeather: NSManagedObject, Codable {
     
 }
 
+@objc(Main)
 class Main:NSManagedObject, Codable {
     @NSManaged var temp: Double
     @NSManaged var pressure: Int
@@ -126,6 +128,7 @@ class Main:NSManagedObject, Codable {
     }
 }
 
+@objc(Weather)
 class Weather:NSManagedObject, Codable {
     @NSManaged var weatherDescription: String
     
@@ -150,6 +153,7 @@ class Weather:NSManagedObject, Codable {
     }
 }
 
+@objc(Wind)
 class Wind:NSManagedObject, Codable {
     @NSManaged var speed: Double
     @NSManaged var deg: Int

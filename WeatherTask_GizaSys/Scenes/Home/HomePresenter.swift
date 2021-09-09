@@ -129,6 +129,9 @@ extension HomePresenter: HomeInteractorOutputProtocol{
 
             self.cities.append(cityDayWeather)
         print("Data fetiched successfully")
+        
+     //   CoreDataManager.shared.save()
+        
     }
     
     func dataFetchingFailed(with error: Error) {

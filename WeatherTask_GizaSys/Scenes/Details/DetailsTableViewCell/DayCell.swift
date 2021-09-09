@@ -37,6 +37,6 @@ extension DayCell: DayCellViewProtocol{
         dayLabel.text = cityDayWeather.date
         windLabel.text = "\(cityDayWeather.wind.speed)"
         tempLabel.text = "\(cityDayWeather.main.temp)"
-        weatherLabel.text = cityDayWeather.weather[0].weatherDescription.rawValue
+        weatherLabel.text = cityDayWeather.weather[0].weatherDescription
     }
 }

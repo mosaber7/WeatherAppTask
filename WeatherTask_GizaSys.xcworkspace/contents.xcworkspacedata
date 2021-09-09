@@ -2,6 +2,30 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Weather+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Weather+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Main+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Main+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Wind+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Wind+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CityDayWeather+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CityDayWeather+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:WeatherTask_GizaSys.xcodeproj">
    </FileRef>
    <FileRef

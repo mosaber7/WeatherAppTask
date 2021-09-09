@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20C5061b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CityDayWeather" representedClassName="CityDayWeather" syncable="YES" codeGenerationType="category">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="main" maxCount="1" deletionRule="Cascade" destinationEntity="Main"/>
+        <relationship name="weather" toMany="YES" deletionRule="Nullify" destinationEntity="Weather"/>
+        <relationship name="wind" maxCount="1" deletionRule="Nullify" destinationEntity="Wind"/>
+    </entity>
+    <entity name="Main" representedClassName="Main" syncable="YES" codeGenerationType="class"/>
+    <entity name="Weather" representedClassName="Weather" syncable="YES" codeGenerationType="class"/>
+    <entity name="Wind" representedClassName="Wind" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="CityDayWeather" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Main" positionX="-54" positionY="-9" width="128" height="29"/>
+        <element name="Wind" positionX="-36" positionY="9" width="128" height="29"/>
+        <element name="Weather" positionX="-9" positionY="36" width="128" height="29"/>
+    </elements>
 </model>
